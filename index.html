@@ -489,35 +489,5 @@
     </svg>
   </a>
 
-  <script>
-    // Menu Mobile
-    const menuBtn = document.getElementById('menuBtn');
-    const closeBtn = document.getElementById('closeBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const overlay = document.getElementById('overlay');
-    const menuLinks = document.querySelectorAll('#mobileMenu a');
-
-    menuBtn?.addEventListener('click', () => {
-      mobileMenu?.classList.add('active');
-      overlay?.classList.remove('hidden');
-    });
-
-    closeBtn?.addEventListener('click', () => {
-      mobileMenu?.classList.remove('active');
-      overlay?.classList.add('hidden');
-    });
-
-    overlay?.addEventListener('click', () => {
-      mobileMenu?.classList.remove('active');
-      overlay?.classList.add('hidden');
-    });
-
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu?.classList.remove('active');
-        overlay?.classList.add('hidden');
-      });
-    });
-  </script>
 </body>
 </html>
