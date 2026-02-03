@@ -8,15 +8,13 @@ const closeBtn = document.getElementById('closeBtn');
 
 // Function to close menu
 function closeMenu() {
-  mobileMenu.classList.remove('translate-x-0');
-  mobileMenu.classList.add('-translate-x-full');
+  mobileMenu.style.transform = 'translateX(100%)';
   overlay.classList.add('hidden');
 }
 
 // Open menu
 menuBtn.addEventListener('click', () => {
-  mobileMenu.classList.remove('-translate-x-full');
-  mobileMenu.classList.add('translate-x-0');
+  mobileMenu.style.transform = 'translateX(0)';
   overlay.classList.remove('hidden');
 });
 
