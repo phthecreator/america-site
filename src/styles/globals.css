@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #f1f5f9;
+}
+
+/* Fundo futurista com padrão */
+.futuristic-bg {
+  background:
+    radial-gradient(circle at 20% 50%, rgba(28, 47, 143, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(224, 58, 62, 0.05) 0%, transparent 50%),
+    linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f1419 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Padrão mecânico */
+.mechanical-pattern::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(28, 47, 143, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+}
+
+/* Cards com glow */
+.card-premium {
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(28, 47, 143, 0.3);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.card-premium:hover {
+  transform: translateY(-8px);
+  border-color: rgba(224, 58, 62, 0.6);
+  box-shadow: 0 20px 40px rgba(28, 47, 143, 0.2);
+}
+
+/* Botões premium */
+.btn-premium {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.btn-premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: left 0.5s ease;
+  z-index: -1;
+}
+
+.btn-premium:hover::before {
+  left: 100%;
+}
+
+.btn-premium:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(224, 58, 62, 0.3);
+}
+
+/* Header sticky com fundo branco */
+header {
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* Seções com altura dinâmica */
+section {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero title */
+.hero-title {
+  font-size: clamp(28px, 8vw, 48px);
+  line-height: 1.2;
+  font-weight: 900;
+}
+
+/* Glow text */
+.glow-text {
+  background: linear-gradient(135deg, #e03a3e, #1c2f8f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hero subtitle */
+.hero-subtitle {
+  font-size: clamp(14px, 2.5vw, 20px);
+  line-height: 1.6;
+}
+
+/* Mobile menu */
+.mobile-menu {
+  backdrop-filter: blur(10px);
+}
+
+.mobile-menu.active {
+  transform: translateX(0);
+}
+
+#overlay.active {
+  display: block;
+}

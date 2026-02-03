@@ -16,186 +16,8 @@
   <link rel="icon" type="image/png" href="logo-america.png" />
   <link rel="canonical" href="https://www.americaindustria.com.br/" />
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'america-blue': '#1c2f8f',
-            'america-red': '#e03a3e',
-            'america-dark': '#111827',
-            'america-light': '#f8fafc'
-          },
-          animation: {
-            'rotate-slow': 'rotate 20s linear infinite',
-            'rotate-slower': 'rotate 30s linear infinite reverse',
-            'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
-            'float': 'float 6s ease-in-out infinite',
-            'slide-up': 'slide-up 0.8s ease-out',
-          },
-          keyframes: {
-            rotate: {
-              'from': { transform: 'rotate(0deg)' },
-              'to': { transform: 'rotate(360deg)' }
-            },
-            'pulse-glow': {
-              '0%, 100%': { boxShadow: '0 0 20px rgba(28, 47, 143, 0.3)' },
-              '50%': { boxShadow: '0 0 40px rgba(224, 58, 62, 0.3)' }
-            },
-            float: {
-              '0%, 100%': { transform: 'translateY(0px)' },
-              '50%': { transform: 'translateY(-20px)' }
-            },
-            'slide-up': {
-              'from': { opacity: '0', transform: 'translateY(40px)' },
-              'to': { opacity: '1', transform: 'translateY(0)' }
-            }
-          }
-        }
-      }
-    }
-  </script>
 
-  <style>
-    * { scroll-behavior: smooth; }
-
-    body {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      color: #f1f5f9;
-    }
-
-    /* Fundo futurista com padrão */
-    .futuristic-bg {
-      background:
-        radial-gradient(circle at 20% 50%, rgba(28, 47, 143, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(224, 58, 62, 0.05) 0%, transparent 50%),
-        linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f1419 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Padrão mecânico */
-    .mechanical-pattern::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-image:
-        radial-gradient(circle at 1px 1px, rgba(28, 47, 143, 0.1) 1px, transparent 1px);
-      background-size: 40px 40px;
-      pointer-events: none;
-      top: 0;
-      left: 0;
-    }
-
-    /* Cards com glow */
-    .card-premium {
-      background: rgba(30, 41, 59, 0.8);
-      border: 1px solid rgba(28, 47, 143, 0.3);
-      backdrop-filter: blur(10px);
-      transition: all 0.3s ease;
-    }
-
-    .card-premium:hover {
-      transform: translateY(-8px);
-      border-color: rgba(224, 58, 62, 0.6);
-      box-shadow: 0 20px 40px rgba(28, 47, 143, 0.2);
-    }
-
-    /* Botões premium */
-    .btn-premium {
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-
-    .btn-premium::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.2);
-      transition: left 0.5s ease;
-      z-index: -1;
-    }
-
-    .btn-premium:hover::before {
-      left: 100%;
-    }
-
-    .btn-premium:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(224, 58, 62, 0.3);
-    }
-
-    /* Header sticky com fundo branco */
-    header {
-      background: #ffffff;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      border-bottom: 1px solid #e5e7eb;
-      position: sticky;
-      top: 0;
-      z-index: 50;
-    }
-
-    /* Seções com altura dinâmica */
-    section {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Mobile menu */
-    .mobile-menu {
-      transform: translateX(100%);
-      transition: transform 0.3s ease;
-    }
-
-    .mobile-menu.active {
-      transform: translateX(0);
-    }
-
-    /* Glow text */
-    .glow-text {
-      color: #e03a3e;
-      text-shadow: 0 0 10px rgba(224, 58, 62, 0.5);
-    }
-
-    /* Animação de entrada */
-    .animate-in {
-      animation: slide-up 0.8s ease-out;
-    }
-
-    /* WhatsApp flutuante */
-    .whatsapp-btn {
-      animation: float 3s ease-in-out infinite;
-    }
-
-    /* Grid responsivo */
-    @media (max-width: 768px) {
-      .grid-responsive {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* Hero text responsive */
-    .hero-title {
-      font-size: clamp(2rem, 5vw, 4rem);
-      line-height: 1.2;
-      font-weight: 800;
-      letter-spacing: -1px;
-    }
-
-    .hero-subtitle {
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      font-weight: 300;
-      letter-spacing: 0.5px;
-    }
-  </style>
+  <script type="module" src="/src/main.js"></script>
 </head>
 <body>
 
@@ -235,7 +57,7 @@
   </header>
 
   <!-- MOBILE MENU -->
-  <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-72 h-full bg-america-dark bg-opacity-95 shadow-2xl z-50 p-6 overflow-y-auto">
+  <div id="mobileMenu" class="fixed top-0 right-0 w-72 h-full bg-america-dark bg-opacity-95 shadow-2xl z-50 p-6 overflow-y-auto translate-x-full transition-transform duration-300">
     <button id="closeBtn" class="absolute top-4 right-4 p-2 rounded-lg hover:bg-white/10">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -254,7 +76,7 @@
       </a>
     </nav>
   </div>
-  <div id="overlay" class="hidden fixed inset-0 bg-black/50 z-40"></div>
+  <div id="overlay" class="hidden fixed inset-0 bg-black/50 z-40 transition-opacity duration-300"></div>
 
   <!-- HERO SECTION - FUTURISTA -->
   <section class="futuristic-bg mechanical-pattern relative pt-20 md:pt-32 pb-16 md:pb-24">
@@ -520,10 +342,10 @@
       <!-- CTA -->
       <div class="mt-12 md:mt-16 text-center">
         <p class="text-slate-400 mb-6">Catálogo completo com especificações técnicas e aplicações</p>
-        <a href="#contato" class="btn-premium bg-gradient-to-r from-america-blue to-america-red hover:opacity-90 text-white px-8 py-3 rounded-lg font-bold inline-flex items-center gap-2">
+        <a href="https://wa.me/5562991340408?text=Olá%20América%20Indústria!%20Gostaria%20de%20receber%20o%20catálogo%20completo%20com%20especificações%20técnicas%20dos%20produtos." target="_blank" rel="noopener noreferrer" class="btn-premium bg-gradient-to-r from-america-blue to-america-red hover:opacity-90 text-white px-8 py-3 rounded-lg font-bold inline-flex items-center gap-2">
           Solicitar Catálogo PDF
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-9.746 9.798c0 2.734.75 5.404 2.177 7.707l-2.313 6.179 6.434-2.783a9.857 9.857 0 004.882 1.235h.004c5.43 0 9.868-4.43 9.868-9.868 0-2.629-.568-5.124-1.588-7.509a9.874 9.874 0 00-8.109-5.859M12 0C5.373 0 0 5.373 0 12c0 2.149.547 4.179 1.506 5.946L.461 24l6.255-2.712C10.002 23.422 10.984 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0"/>
           </svg>
         </a>
       </div>
