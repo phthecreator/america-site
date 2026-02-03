@@ -128,3 +128,69 @@ section {
 #overlay.active {
   display: block;
 }
+
+/* PDF Viewer Styles */
+.pdf-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.pdf-btn {
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.pdf-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(224, 58, 62, 0.3);
+}
+
+.pdf-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.pdf-canvas-wrapper {
+  border-radius: 0.5rem;
+  background: #0f172a;
+}
+
+#pdf-canvas {
+  display: block;
+  border-radius: 0.375rem;
+}
+
+#search-input:focus {
+  outline: none;
+}
+
+#search-input.ring-america-blue {
+  box-shadow: 0 0 0 3px rgba(28, 47, 143, 0.1), inset 0 0 0 2px rgb(28, 47, 143);
+}
+
+#search-input.ring-red-500 {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1), inset 0 0 0 2px rgb(239, 68, 68);
+}
+
+/* Responsive PDF Toolbar */
+@media (max-width: 640px) {
+  .pdf-toolbar {
+    gap: 0.5rem;
+  }
+
+  .pdf-toolbar > div {
+    flex-basis: 100%;
+  }
+
+  .pdf-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+  }
+
+  #search-input {
+    padding: 0.5rem 0.75rem;
+  }
+}
