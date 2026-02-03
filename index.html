@@ -9,10 +9,6 @@
   <meta name="keywords" content="peças automotivas, motores de partida, induzidos, estatores, rotores, bobinas, Goiânia" />
   <meta name="author" content="América Indústria LTDA" />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="América Indústria | Peças Premium" />
-  <meta property="og:description" content="Precisão, qualidade e garantia desde 1990" />
-
   <link rel="icon" type="image/png" href="logo-america.png" />
   <link rel="canonical" href="https://www.americaindustria.com.br/" />
 
@@ -25,32 +21,7 @@
             'america-blue': '#1c2f8f',
             'america-red': '#e03a3e',
             'america-dark': '#111827',
-            'america-light': '#f8fafc'
-          },
-          animation: {
-            'rotate-slow': 'rotate 20s linear infinite',
-            'rotate-slower': 'rotate 30s linear infinite reverse',
-            'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
-            'float': 'float 6s ease-in-out infinite',
-            'slide-up': 'slide-up 0.8s ease-out',
-          },
-          keyframes: {
-            rotate: {
-              'from': { transform: 'rotate(0deg)' },
-              'to': { transform: 'rotate(360deg)' }
-            },
-            'pulse-glow': {
-              '0%, 100%': { boxShadow: '0 0 20px rgba(28, 47, 143, 0.3)' },
-              '50%': { boxShadow: '0 0 40px rgba(224, 58, 62, 0.3)' }
-            },
-            float: {
-              '0%, 100%': { transform: 'translateY(0px)' },
-              '50%': { transform: 'translateY(-20px)' }
-            },
-            'slide-up': {
-              'from': { opacity: '0', transform: 'translateY(40px)' },
-              'to': { opacity: '1', transform: 'translateY(0)' }
-            }
+            'america-light': '#f0f4f8'
           }
         }
       }
@@ -61,95 +32,130 @@
     * { scroll-behavior: smooth; }
 
     body {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      color: #f1f5f9;
+      background: #ffffff;
+      color: #1a202c;
     }
 
-    /* Fundo futurista com padrão */
-    .futuristic-bg {
-      background:
-        radial-gradient(circle at 20% 50%, rgba(28, 47, 143, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(224, 58, 62, 0.05) 0%, transparent 50%),
-        linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f1419 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Padrão mecânico */
-    .mechanical-pattern::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-image:
-        radial-gradient(circle at 1px 1px, rgba(28, 47, 143, 0.1) 1px, transparent 1px);
-      background-size: 40px 40px;
-      pointer-events: none;
-      top: 0;
-      left: 0;
-    }
-
-    /* Cards com glow */
-    .card-premium {
-      background: rgba(30, 41, 59, 0.8);
-      border: 1px solid rgba(28, 47, 143, 0.3);
-      backdrop-filter: blur(10px);
-      transition: all 0.3s ease;
-    }
-
-    .card-premium:hover {
-      transform: translateY(-8px);
-      border-color: rgba(224, 58, 62, 0.6);
-      box-shadow: 0 20px 40px rgba(28, 47, 143, 0.2);
-    }
-
-    /* Botões premium */
-    .btn-premium {
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-
-    .btn-premium::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: rgba(255, 255, 255, 0.2);
-      transition: left 0.5s ease;
-      z-index: -1;
-    }
-
-    .btn-premium:hover::before {
-      left: 100%;
-    }
-
-    .btn-premium:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(224, 58, 62, 0.3);
-    }
-
-    /* Header sticky com fundo branco */
+    /* Header elegante */
     header {
       background: #ffffff;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      border-bottom: 1px solid #e5e7eb;
+      box-shadow: 0 4px 12px rgba(28, 47, 143, 0.08);
+      border-bottom: 3px solid #1c2f8f;
       position: sticky;
       top: 0;
       z-index: 50;
     }
 
-    /* Seções com altura dinâmica */
-    section {
+    /* Hero com fundo azul/branco */
+    .hero-section {
+      background: linear-gradient(135deg, #1c2f8f 0%, #2d4aa8 50%, #f0f4f8 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .hero-content {
       position: relative;
       z-index: 1;
     }
 
-    /* Mobile menu */
+    /* Cards com estilo clean */
+    .card-clean {
+      background: #ffffff;
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .card-clean:hover {
+      border-color: #1c2f8f;
+      box-shadow: 0 12px 24px rgba(28, 47, 143, 0.15);
+      transform: translateY(-4px);
+    }
+
+    .card-clean::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: #e03a3e;
+    }
+
+    /* Botões clean */
+    .btn-clean {
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #1c2f8f;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #0f1659;
+      box-shadow: 0 8px 16px rgba(28, 47, 143, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #1c2f8f;
+      border: 2px solid #1c2f8f;
+    }
+
+    .btn-secondary:hover {
+      background: #1c2f8f;
+      color: white;
+    }
+
+    /* Seções com fundo alternado */
+    section:nth-child(odd) {
+      background: #ffffff;
+    }
+
+    section:nth-child(even) {
+      background: #f0f4f8;
+    }
+
+    /* Destaque em vermelho */
+    .accent-red {
+      color: #e03a3e;
+      font-weight: 700;
+    }
+
+    /* Hero text */
+    .hero-title {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      line-height: 1.2;
+      font-weight: 900;
+      color: white;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.25rem);
+      color: rgba(255, 255, 255, 0.95);
+      font-weight: 300;
+    }
+
+    /* Menu mobile */
     .mobile-menu {
       transform: translateX(100%);
       transition: transform 0.3s ease;
@@ -159,62 +165,71 @@
       transform: translateX(0);
     }
 
-    /* Glow text */
-    .glow-text {
-      color: #e03a3e;
-      text-shadow: 0 0 10px rgba(224, 58, 62, 0.5);
+    /* Icon boxes */
+    .icon-box {
+      width: 60px;
+      height: 60px;
+      background: #f0f4f8;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
     }
 
-    /* Animação de entrada */
-    .animate-in {
-      animation: slide-up 0.8s ease-out;
+    .card-clean:hover .icon-box {
+      background: #1c2f8f;
     }
 
-    /* WhatsApp flutuante */
-    .whatsapp-btn {
+    .card-clean:hover .icon-box svg {
+      color: white;
+    }
+
+    /* Stats */
+    .stat-box {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #1c2f8f;
+    }
+
+    .stat-text {
+      font-size: 0.875rem;
+      color: #6b7280;
+      margin-top: 0.5rem;
+      font-weight: 500;
+    }
+
+    /* WhatsApp button */
+    .whatsapp-float {
       animation: float 3s ease-in-out infinite;
     }
 
-    /* Grid responsivo */
-    @media (max-width: 768px) {
-      .grid-responsive {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* Hero text responsive */
-    .hero-title {
-      font-size: clamp(2rem, 5vw, 4rem);
-      line-height: 1.2;
-      font-weight: 800;
-      letter-spacing: -1px;
-    }
-
-    .hero-subtitle {
-      font-size: clamp(1rem, 2vw, 1.25rem);
-      font-weight: 300;
-      letter-spacing: 0.5px;
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER PREMIUM -->
-  <header class="mechanical-pattern">
+  <!-- HEADER CLEAN -->
+  <header>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-3 md:gap-4">
-        <img src="logo-america.png" alt="América Indústria" class="h-10 md:h-12 w-auto object-contain filter brightness-110" />
-        <div class="hidden md:block leading-tight">
-          <p class="text-xs font-bold tracking-widest uppercase text-america-blue">
-            AMÉRICA
-          </p>
-          <p class="text-[10px] text-slate-400 font-light">
-            INDÚSTRIA DE PRECISÃO
-          </p>
+      <div class="flex items-center gap-4">
+        <img src="logo-america.png" alt="América Indústria" class="h-12 w-auto object-contain" />
+        <div class="hidden md:block">
+          <p class="text-sm font-bold text-america-blue uppercase tracking-wide">América Indústria</p>
+          <p class="text-xs text-slate-500">Peças de Precisão desde 1990</p>
         </div>
       </div>
 
-      <nav class="hidden lg:flex items-center gap-8">
+      <nav class="hidden lg:flex items-center gap-10">
         <a href="#sobre" class="text-sm font-medium text-america-blue hover:text-america-red transition">Sobre</a>
         <a href="#produtos" class="text-sm font-medium text-america-blue hover:text-america-red transition">Produtos</a>
         <a href="#diferencial" class="text-sm font-medium text-america-blue hover:text-america-red transition">Diferencial</a>
@@ -222,8 +237,11 @@
       </nav>
 
       <div class="flex items-center gap-3">
-        <a href="tel:+556232598840" class="hidden md:inline-flex items-center rounded-lg bg-america-red hover:bg-red-600 px-4 py-2 text-xs font-bold text-white transition">
-          (62) 3259-8840
+        <a href="https://wa.me/5562991340408?text=Olá%20América%20Indústria!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20peças%20automotivas." target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center gap-2 rounded-lg bg-america-blue hover:bg-opacity-90 px-5 py-2 text-sm font-bold text-white transition">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-9.746 9.798c0 2.734.75 5.404 2.177 7.707l-2.313 6.179 6.434-2.783a9.857 9.857 0 004.882 1.235h.004c5.43 0 9.868-4.43 9.868-9.868 0-2.629-.568-5.124-1.588-7.509a9.874 9.874 0 00-8.109-5.859M12 0C5.373 0 0 5.373 0 12c0 2.149.547 4.179 1.506 5.946L.461 24l6.255-2.712C10.002 23.422 10.984 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0"/>
+          </svg>
+          WhatsApp
         </a>
         <button id="menuBtn" class="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition">
           <svg class="w-6 h-6 text-america-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -235,56 +253,48 @@
   </header>
 
   <!-- MOBILE MENU -->
-  <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-72 h-full bg-america-dark bg-opacity-95 shadow-2xl z-50 p-6 overflow-y-auto">
-    <button id="closeBtn" class="absolute top-4 right-4 p-2 rounded-lg hover:bg-white/10">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-72 h-full bg-white shadow-2xl z-50 p-6 overflow-y-auto">
+    <button id="closeBtn" class="absolute top-4 right-4 p-2">
+      <svg class="w-6 h-6 text-america-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
       </svg>
     </button>
     <nav class="flex flex-col gap-4 mt-8">
-      <a href="#sobre" class="text-base font-medium hover:text-america-red transition py-2">Sobre</a>
-      <a href="#produtos" class="text-base font-medium hover:text-america-red transition py-2">Produtos</a>
-      <a href="#diferencial" class="text-base font-medium hover:text-america-red transition py-2">Diferencial</a>
-      <a href="#contato" class="text-base font-medium hover:text-america-red transition py-2">Contato</a>
-      <a href="tel:+556232598840" class="flex items-center gap-2 mt-6 rounded-lg bg-america-red px-4 py-3 font-bold text-white">
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773c.26.559.934 1.42 2.853 3.339 1.92 1.92 2.78 2.592 3.339 2.853l.773-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2.5C6.767 18 3 14.233 3 9.5V5a1 1 0 011-1z"></path>
-        </svg>
-        (62) 3259-8840
-      </a>
+      <a href="#sobre" class="text-base font-medium text-america-blue hover:text-america-red transition py-2">Sobre</a>
+      <a href="#produtos" class="text-base font-medium text-america-blue hover:text-america-red transition py-2">Produtos</a>
+      <a href="#diferencial" class="text-base font-medium text-america-blue hover:text-america-red transition py-2">Diferencial</a>
+      <a href="#contato" class="text-base font-medium text-america-blue hover:text-america-red transition py-2">Contato</a>
     </nav>
   </div>
-  <div id="overlay" class="hidden fixed inset-0 bg-black/50 z-40"></div>
+  <div id="overlay" class="hidden fixed inset-0 bg-black/30 z-40"></div>
 
-  <!-- HERO SECTION - FUTURISTA -->
-  <section class="futuristic-bg mechanical-pattern relative pt-20 md:pt-32 pb-16 md:pb-24">
+  <!-- HERO CLEAN -->
+  <section class="hero-section relative py-20 md:py-32">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-
-        <!-- Conteúdo Hero -->
-        <div class="animate-in order-2 md:order-1">
+      <div class="hero-content grid md:grid-cols-2 gap-12 items-center">
+        <div>
           <div class="mb-6">
-            <span class="inline-block px-4 py-2 bg-america-red/20 border border-america-red/50 rounded-full text-xs font-bold text-america-red uppercase tracking-widest">
-              ⚙️ Desde 1990 • Goiânia
+            <span class="inline-block px-4 py-2 bg-white/20 rounded-full text-sm font-bold text-white uppercase tracking-widest">
+              ✓ 30+ anos de confiança
             </span>
           </div>
 
-          <h1 class="hero-title text-white font-black mb-4">
-            Peças automotivas com <span class="glow-text">qualidade</span>, <span class="glow-text">garantia</span> e tradição
+          <h1 class="hero-title mb-6">
+            Peças automotivas com <span class="accent-red">qualidade</span>, <span class="accent-red">garantia</span> e tradição
           </h1>
 
-          <p class="hero-subtitle text-slate-300 mb-6 leading-relaxed">
+          <p class="hero-subtitle mb-8">
             América Indústria fornece <strong>induzidos, estatores, rotores e bobinas</strong> com garantia profissional. Confiança de mais de 30 anos em cada peça.
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4">
-            <a href="https://wa.me/5562991340408?text=Olá%20América%20Indústria!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20peças%20automotivas." target="_blank" rel="noopener noreferrer" class="btn-premium bg-america-red hover:bg-red-600 text-white px-6 py-3 rounded-lg inline-flex items-center justify-center gap-2 text-sm">
+            <a href="https://wa.me/5562991340408?text=Olá%20América%20Indústria!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20peças%20automotivas." target="_blank" rel="noopener noreferrer" class="btn-clean btn-primary px-6 py-3 rounded-lg inline-flex items-center justify-center gap-2 text-sm">
               <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-9.746 9.798c0 2.734.75 5.404 2.177 7.707l-2.313 6.179 6.434-2.783a9.857 9.857 0 004.882 1.235h.004c5.43 0 9.868-4.43 9.868-9.868 0-2.629-.568-5.124-1.588-7.509a9.874 9.874 0 00-8.109-5.859M12 0C5.373 0 0 5.373 0 12c0 2.149.547 4.179 1.506 5.946L.461 24l6.255-2.712C10.002 23.422 10.984 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0"/>
               </svg>
               Solicitar Orçamento
             </a>
-            <a href="#produtos" class="btn-premium border border-america-blue/50 hover:border-america-red text-white px-6 py-3 rounded-lg inline-flex items-center justify-center gap-2 text-sm">
+            <a href="#produtos" class="btn-clean btn-secondary px-6 py-3 rounded-lg inline-flex items-center justify-center gap-2 text-sm">
               Ver Produtos
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
@@ -293,166 +303,14 @@
           </div>
         </div>
 
-        <!-- Elementos visuais - Engrenagens animadas -->
-        <div class="order-1 md:order-2 relative h-80 md:h-96 flex items-center justify-center">
-          <svg class="absolute w-full h-full max-w-sm" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <!-- Engrenagem grande externa (rotação lenta) -->
-            <g class="animate-rotate-slower" style="filter: drop-shadow(0 0 20px rgba(224, 58, 62, 0.3))">
-              <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(28, 47, 143, 0.3)" stroke-width="2"/>
-              <circle cx="100" cy="100" r="85" fill="none" stroke="rgba(224, 58, 62, 0.2)" stroke-width="1"/>
-
-              <!-- Dentes da engrenagem grande -->
-              <g stroke="rgba(28, 47, 143, 0.4)" stroke-width="3" fill="none">
-                <line x1="100" y1="20" x2="100" y2="30" />
-                <line x1="135.4" y1="35.4" x2="142.4" y2="42.4" />
-                <line x1="157.1" y1="64.6" x2="163" y2="70.5" />
-                <line x1="170" y1="100" x2="180" y2="100" />
-                <line x1="164.6" y1="135.4" x2="171.6" y2="142.4" />
-                <line x1="135.4" y1="164.6" x2="142.4" y2="171.6" />
-                <line x1="100" y1="180" x2="100" y2="190" />
-                <line x1="64.6" y1="164.6" x2="57.6" y2="171.6" />
-                <line x1="35.4" y1="135.4" x2="28.4" y2="142.4" />
-                <line x1="20" y1="100" x2="10" y2="100" />
-                <line x1="35.4" y1="64.6" x2="28.4" y2="57.6" />
-                <line x1="64.6" y1="35.4" x2="57.6" y2="28.4" />
-              </g>
-            </g>
-
-            <!-- Engrenagem do meio (rotação normal) -->
-            <g class="animate-rotate-slow" style="filter: drop-shadow(0 0 15px rgba(28, 47, 143, 0.4))">
-              <circle cx="100" cy="100" r="55" fill="none" stroke="rgba(224, 58, 62, 0.4)" stroke-width="2"/>
-              <circle cx="100" cy="100" r="50" fill="none" stroke="rgba(28, 47, 143, 0.2)" stroke-width="1"/>
-
-              <!-- Dentes da engrenagem do meio -->
-              <g stroke="rgba(224, 58, 62, 0.5)" stroke-width="2" fill="none">
-                <line x1="100" y1="55" x2="100" y2="45" />
-                <line x1="127.6" y1="72.4" x2="135.4" y2="64.6" />
-                <line x1="145" y1="100" x2="155" y2="100" />
-                <line x1="127.6" y1="127.6" x2="135.4" y2="135.4" />
-                <line x1="100" y1="155" x2="100" y2="165" />
-                <line x1="72.4" y1="127.6" x2="64.6" y2="135.4" />
-                <line x1="55" y1="100" x2="45" y2="100" />
-                <line x1="72.4" y1="72.4" x2="64.6" y2="64.6" />
-              </g>
-            </g>
-
-            <!-- Centro com glow -->
-            <circle cx="100" cy="100" r="12" fill="rgba(224, 58, 62, 0.6)" style="filter: drop-shadow(0 0 10px rgba(224, 58, 62, 0.8))"/>
-            <circle cx="100" cy="100" r="8" fill="rgba(28, 47, 143, 0.8)"/>
-          </svg>
-
-          <!-- Orbe de glow -->
-          <div class="absolute inset-0 flex items-center justify-center">
-            <div class="w-56 h-56 bg-gradient-to-br from-america-red/20 to-america-blue/20 rounded-full filter blur-3xl opacity-60"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Estatísticas -->
-      <div class="grid grid-cols-3 md:grid-cols-4 gap-4 md:gap-6 mt-16 md:mt-24">
-        <div class="card-premium rounded-lg p-4 md:p-6 text-center">
-          <div class="text-2xl md:text-3xl font-black text-america-red mb-2">30+</div>
-          <p class="text-xs md:text-sm text-slate-400">Anos de Tradição</p>
-        </div>
-        <div class="card-premium rounded-lg p-4 md:p-6 text-center">
-          <div class="text-2xl md:text-3xl font-black text-america-blue mb-2">10K+</div>
-          <p class="text-xs md:text-sm text-slate-400">Clientes Ativos</p>
-        </div>
-        <div class="card-premium rounded-lg p-4 md:p-6 text-center">
-          <div class="text-2xl md:text-3xl font-black text-america-red mb-2">100%</div>
-          <p class="text-xs md:text-sm text-slate-400">Garantia</p>
-        </div>
-        <div class="hidden md:block card-premium rounded-lg p-6 text-center">
-          <div class="text-3xl font-black text-america-blue mb-2">24h</div>
-          <p class="text-sm text-slate-400">Entrega Rápida</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOBRE - PREMIUM -->
-  <section id="sobre" class="relative py-16 md:py-24 bg-gradient-to-b from-slate-900 to-slate-950">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="mb-12 md:mb-16">
-        <span class="text-america-red font-bold text-sm tracking-widest uppercase">POR QUE SOMOS LÍDERES</span>
-        <h2 class="text-3xl md:text-4xl font-black text-white mt-2">Precisão sem Compromissos</h2>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-        <div>
-          <div class="space-y-6">
-            <div class="card-premium rounded-lg p-6">
-              <div class="flex gap-4">
-                <div class="flex-shrink-0">
-                  <svg class="w-8 h-8 text-america-red" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clip-rule="evenodd" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="text-lg font-bold text-white mb-1">Fabricação Certificada</h3>
-                  <p class="text-sm text-slate-400">Processos ISO com controle de qualidade em 100% da produção</p>
-                </div>
+        <div class="hidden md:flex items-center justify-center">
+          <div class="relative">
+            <div class="w-64 h-64 bg-white rounded-2xl shadow-2xl flex items-center justify-center">
+              <div class="text-center">
+                <div class="text-5xl font-black text-america-blue mb-2">30+</div>
+                <div class="text-sm font-semibold text-slate-600">Anos de Tradição</div>
+                <div class="w-16 h-1 bg-america-red rounded-full mx-auto mt-4"></div>
               </div>
-            </div>
-
-            <div class="card-premium rounded-lg p-6">
-              <div class="flex gap-4">
-                <div class="flex-shrink-0">
-                  <svg class="w-8 h-8 text-america-blue" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5.951-1.488 5.951 1.488a1 1 0 001.169-1.409l-7-14z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="text-lg font-bold text-white mb-1">Expertise Técnica</h3>
-                  <p class="text-sm text-slate-400">Equipe especializada em peças para motores nacionais e importados</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="card-premium rounded-lg p-6">
-              <div class="flex gap-4">
-                <div class="flex-shrink-0">
-                  <svg class="w-8 h-8 text-america-red" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 class="text-lg font-bold text-white mb-1">Melhor Custo-Benefício</h3>
-                  <p class="text-sm text-slate-400">Preços competitivos sem sacrificar qualidade. Volume e variedade garantidos</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="relative">
-          <div class="card-premium rounded-xl p-8 border-2 border-america-red/30">
-            <h3 class="text-2xl md:text-3xl font-black text-white mb-4">Fundada em 1990</h3>
-            <p class="text-slate-300 mb-6 leading-relaxed">
-              A <strong>América Indústria</strong> é resultado de três décadas de dedição em fabricar peças automotivas de excelência. Começamos pequenos. Crescemos com nossos clientes.
-            </p>
-            <p class="text-slate-300 mb-6 leading-relaxed">
-              Hoje, somos a escolha de distribuidoras, oficinas e aplicadores em todo Brasil. Confiança não se compra. Se constrói.
-            </p>
-            <div class="space-y-3">
-              <p class="flex items-center gap-2 text-sm text-slate-300">
-                <svg class="w-5 h-5 text-america-red flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                </svg>
-                Goiânia, Goiás - Brasil
-              </p>
-              <p class="flex items-center gap-2 text-sm text-slate-300">
-                <svg class="w-5 h-5 text-america-blue flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                </svg>
-                Processo ISO Certificado
-              </p>
-              <p class="flex items-center gap-2 text-sm text-slate-300">
-                <svg class="w-5 h-5 text-america-red flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                </svg>
-                Garantia Profissional em Todas as Peças
-              </p>
             </div>
           </div>
         </div>
@@ -460,157 +318,167 @@
     </div>
   </section>
 
-  <!-- PRODUTOS - GRID PREMIUM -->
-  <section id="produtos" class="relative py-16 md:py-24 bg-slate-950">
+  <!-- SOBRE -->
+  <section id="sobre" class="py-20 md:py-28">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="mb-12 md:mb-16 text-center">
-        <span class="text-america-red font-bold text-sm tracking-widest uppercase">NOSSA LINHA COMPLETA</span>
-        <h2 class="text-3xl md:text-4xl font-black text-white mt-2">Produtos de Qualidade Premium</h2>
+      <div class="mb-16 text-center">
+        <h2 class="text-3xl md:text-4xl font-900 text-america-blue mb-2">Quem Somos</h2>
+        <p class="text-lg text-slate-600">Precisão, Qualidade e Tradição</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="card-clean rounded-xl p-8 relative">
+          <div class="icon-box">
+            <svg class="w-8 h-8 text-america-blue" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-2.126 3.066 3.066 0 00-4.198 0c-.572.584-.815 1.459-.67 2.255l.261 1.431A3.064 3.064 0 006.267 3.455zm9.5 2.445a3.066 3.066 0 01-1.745 2.126 3.066 3.066 0 004.198 0c.572-.584.815-1.459.67-2.255l-.261-1.431A3.064 3.064 0 0015.767 5.9zM7 10.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zm8 0a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-america-blue mb-2">Fabricação Certificada</h3>
+          <p class="text-sm text-slate-600">Processos ISO com controle de qualidade em 100% da produção</p>
+        </div>
+
+        <div class="card-clean rounded-xl p-8 relative">
+          <div class="icon-box">
+            <svg class="w-8 h-8 text-america-blue" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-america-blue mb-2">Qualidade Garantida</h3>
+          <p class="text-sm text-slate-600">30 anos de histórico impecável em peças automotivas</p>
+        </div>
+
+        <div class="card-clean rounded-xl p-8 relative">
+          <div class="icon-box">
+            <svg class="w-8 h-8 text-america-blue" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-america-blue mb-2">Melhor Custo-Benefício</h3>
+          <p class="text-sm text-slate-600">Preços competitivos sem sacrificar qualidade</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUTOS -->
+  <section id="produtos" class="py-20 md:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-16 text-center">
+        <h2 class="text-3xl md:text-4xl font-900 text-america-blue mb-2">Nossa Linha Completa</h2>
+        <p class="text-lg text-slate-600">Produtos de Qualidade Premium</p>
       </div>
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Induzidos -->
-        <div class="card-premium rounded-lg p-6 group">
-          <div class="relative mb-6 h-32 bg-gradient-to-br from-america-blue/20 to-america-red/20 rounded-lg flex items-center justify-center overflow-hidden">
-            <svg class="w-16 h-16 text-america-blue group-hover:text-america-red transition" fill="currentColor" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/>
-              <circle cx="12" cy="12" r="6" fill="none" stroke="currentColor" stroke-width="2"/>
-              <circle cx="12" cy="12" r="2" fill="currentColor"/>
-            </svg>
+        <div class="card-clean rounded-xl p-6 relative">
+          <div class="h-32 bg-america-light rounded-lg flex items-center justify-center mb-4">
+            <span class="text-4xl">⚙️</span>
           </div>
-          <h3 class="font-bold text-white text-lg mb-2">Induzidos</h3>
-          <p class="text-sm text-slate-400">Componentes de alta durabilidade com precisão micrométrica para motores de partida.</p>
+          <h3 class="font-bold text-america-blue text-lg mb-2">Induzidos</h3>
+          <p class="text-sm text-slate-600">Componentes de alta durabilidade com precisão micrométrica</p>
         </div>
 
-        <!-- Estatores -->
-        <div class="card-premium rounded-lg p-6 group">
-          <div class="relative mb-6 h-32 bg-gradient-to-br from-america-red/20 to-america-blue/20 rounded-lg flex items-center justify-center overflow-hidden">
-            <svg class="w-16 h-16 text-america-red group-hover:text-america-blue transition" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2L15 10H23L17 15L19 23L12 18L5 23L7 15L1 10H9L12 2Z"/>
-            </svg>
+        <div class="card-clean rounded-xl p-6 relative">
+          <div class="h-32 bg-america-light rounded-lg flex items-center justify-center mb-4">
+            <span class="text-4xl">⭐</span>
           </div>
-          <h3 class="font-bold text-white text-lg mb-2">Estatores</h3>
-          <p class="text-sm text-slate-400">Estabilidade e desempenho garantidos para aplicações leves e pesadas.</p>
+          <h3 class="font-bold text-america-blue text-lg mb-2">Estatores</h3>
+          <p class="text-sm text-slate-600">Estabilidade e desempenho para aplicações leves e pesadas</p>
         </div>
 
-        <!-- Rotores -->
-        <div class="card-premium rounded-lg p-6 group">
-          <div class="relative mb-6 h-32 bg-gradient-to-br from-america-blue/20 to-america-red/20 rounded-lg flex items-center justify-center overflow-hidden">
-            <svg class="w-16 h-16 text-america-blue group-hover:text-america-red transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="9" stroke-width="2"/>
-              <path stroke-width="2" d="M12 3v18M3 12h18"/>
-            </svg>
+        <div class="card-clean rounded-xl p-6 relative">
+          <div class="h-32 bg-america-light rounded-lg flex items-center justify-center mb-4">
+            <span class="text-4xl">🔄</span>
           </div>
-          <h3 class="font-bold text-white text-lg mb-2">Rotores</h3>
-          <p class="text-sm text-slate-400">Precisão no acionamento para veículos nacionais e importados com compatibilidade garantida.</p>
+          <h3 class="font-bold text-america-blue text-lg mb-2">Rotores</h3>
+          <p class="text-sm text-slate-600">Precisão no acionamento para veículos nacionais e importados</p>
         </div>
 
-        <!-- Bobinas -->
-        <div class="card-premium rounded-lg p-6 group">
-          <div class="relative mb-6 h-32 bg-gradient-to-br from-america-red/20 to-america-blue/20 rounded-lg flex items-center justify-center overflow-hidden">
-            <svg class="w-16 h-16 text-america-red group-hover:text-america-blue transition" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
-            </svg>
+        <div class="card-clean rounded-xl p-6 relative">
+          <div class="h-32 bg-america-light rounded-lg flex items-center justify-center mb-4">
+            <span class="text-4xl">🔌</span>
           </div>
-          <h3 class="font-bold text-white text-lg mb-2">Bobinas de Campo</h3>
-          <p class="text-sm text-slate-400">Bobinas e automáticos produzidos em alto padrão com garantia de fábrica.</p>
+          <h3 class="font-bold text-america-blue text-lg mb-2">Bobinas</h3>
+          <p class="text-sm text-slate-600">Bobinas e automáticos em alto padrão de qualidade</p>
         </div>
       </div>
 
-      <!-- CTA -->
-      <div class="mt-12 md:mt-16 text-center">
-        <p class="text-slate-400 mb-6">Catálogo completo com especificações técnicas e aplicações</p>
-        <a href="#contato" class="btn-premium bg-gradient-to-r from-america-blue to-america-red hover:opacity-90 text-white px-8 py-3 rounded-lg font-bold inline-flex items-center gap-2">
-          Solicitar Catálogo PDF
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+      <div class="mt-12 text-center">
+        <a href="https://wa.me/5562991340408?text=Olá%20América%20Indústria!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20peças%20automotivas." target="_blank" rel="noopener noreferrer" class="btn-clean btn-primary px-8 py-3 rounded-lg font-bold inline-flex items-center gap-2">
+          Solicitar Catálogo
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-9.746 9.798c0 2.734.75 5.404 2.177 7.707l-2.313 6.179 6.434-2.783a9.857 9.857 0 004.882 1.235h.004c5.43 0 9.868-4.43 9.868-9.868 0-2.629-.568-5.124-1.588-7.509a9.874 9.874 0 00-8.109-5.859M12 0C5.373 0 0 5.373 0 12c0 2.149.547 4.179 1.506 5.946L.461 24l6.255-2.712C10.002 23.422 10.984 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0"/>
           </svg>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- DIFERENCIAIS - ENERGÉTICO -->
-  <section id="diferencial" class="relative py-16 md:py-24 bg-gradient-to-b from-slate-900 to-slate-950">
+  <!-- DIFERENCIAIS -->
+  <section id="diferencial" class="py-20 md:py-28">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="mb-12 md:mb-16 text-center">
-        <span class="text-america-red font-bold text-sm tracking-widest uppercase">DIFERENCIAL COMPETITIVO</span>
-        <h2 class="text-3xl md:text-4xl font-black text-white mt-2">Por Que Escolher América</h2>
+      <div class="mb-16 text-center">
+        <h2 class="text-3xl md:text-4xl font-900 text-america-blue mb-2">Por Que Escolher América</h2>
+        <p class="text-lg text-slate-600">Diferencial Competitivo</p>
       </div>
 
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="card-premium rounded-lg p-8 text-center">
-          <div class="w-16 h-16 bg-america-red/20 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-america-red" fill="currentColor" viewBox="0 0 20 20">
+        <div class="card-clean rounded-xl p-8 text-center relative">
+          <div class="icon-box mx-auto">
+            <svg class="w-8 h-8 text-america-blue" fill="currentColor" viewBox="0 0 20 20">
               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
             </svg>
           </div>
-          <h3 class="font-bold text-lg text-white mb-2">Qualidade Comprovada</h3>
-          <p class="text-sm text-slate-400">30 anos de histórico impecável. Certificações ISO e padrão internacional.</p>
+          <h3 class="font-bold text-lg text-america-blue mb-2">Qualidade Comprovada</h3>
+          <p class="text-sm text-slate-600">30 anos de histórico impecável. Certificações ISO e padrão internacional.</p>
         </div>
 
-        <div class="card-premium rounded-lg p-8 text-center">
-          <div class="w-16 h-16 bg-america-blue/20 rounded-full flex items-center justify-center mx-auto mb-4">
+        <div class="card-clean rounded-xl p-8 text-center relative">
+          <div class="icon-box mx-auto">
             <svg class="w-8 h-8 text-america-blue" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M5 2a1 1 0 011-1h8a1 1 0 011 1v12a1 1 0 11-2 0V4H7v10a1 1 0 11-2 0V2z" clip-rule="evenodd" />
+              <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
             </svg>
           </div>
-          <h3 class="font-bold text-lg text-white mb-2">Suporte Técnico 24h</h3>
-          <p class="text-sm text-slate-400">Equipe de especialistas pronta para resolver dúvidas e especificações técnicas.</p>
+          <h3 class="font-bold text-lg text-america-blue mb-2">Suporte Técnico 24h</h3>
+          <p class="text-sm text-slate-600">Equipe especializada pronta para resolver dúvidas e especificações técnicas.</p>
         </div>
 
-        <div class="card-premium rounded-lg p-8 text-center">
-          <div class="w-16 h-16 bg-america-red/20 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-america-red" fill="currentColor" viewBox="0 0 20 20">
+        <div class="card-clean rounded-xl p-8 text-center relative">
+          <div class="icon-box mx-auto">
+            <svg class="w-8 h-8 text-america-blue" fill="currentColor" viewBox="0 0 20 20">
               <path d="M8.5 11a3 3 0 11-6 0 3 3 0 016 0zM15.866 5.25l-1.414-1.414a.5.5 0 00-.707 0l-1.819 1.82a2 2 0 01-1.414.586H9V7a.5.5 0 00.5.5h2.621a2 2 0 011.414.586l1.82-1.82a.5.5 0 000-.707z" />
             </svg>
           </div>
-          <h3 class="font-bold text-lg text-white mb-2">Preços Competitivos</h3>
-          <p class="text-sm text-slate-400">Melhor custo-benefício do mercado sem perder qualidade em nenhuma peça.</p>
+          <h3 class="font-bold text-lg text-america-blue mb-2">Preços Competitivos</h3>
+          <p class="text-sm text-slate-600">Melhor custo-benefício do mercado sem perder qualidade em nenhuma peça.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTATO - CTA -->
-  <section id="contato" class="relative py-16 md:py-24 bg-slate-950">
+  <!-- CONTATO -->
+  <section id="contato" class="py-20 md:py-28">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="card-premium rounded-xl p-8 md:p-12 border-2 border-america-red/50">
-        <div class="text-center mb-8">
-          <h2 class="text-3xl md:text-4xl font-black text-white mb-2">Fale com a Gente</h2>
-          <p class="text-slate-300">Orçamentos, dúvidas técnicas ou parcerias. Estamos aqui para ajudar.</p>
-        </div>
+      <div class="bg-america-blue rounded-2xl p-8 md:p-12 text-center text-white">
+        <h2 class="text-3xl md:text-4xl font-900 mb-3">Fale com a Gente</h2>
+        <p class="text-lg mb-8 text-blue-100">Orçamentos, dúvidas técnicas ou parcerias. Estamos prontos para ajudar.</p>
 
         <div class="grid sm:grid-cols-2 gap-6 mb-8">
-          <a href="https://wa.me/5562991340408?text=Olá%20América%20Indústria!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20peças%20automotivas." target="_blank" rel="noopener noreferrer" class="btn-premium bg-america-red hover:bg-red-600 text-white px-6 py-4 rounded-lg font-bold inline-flex items-center justify-center gap-2">
+          <a href="https://wa.me/5562991340408?text=Olá%20América%20Indústria!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20peças%20automotivas." target="_blank" rel="noopener noreferrer" class="bg-white text-america-blue hover:bg-slate-100 font-bold px-6 py-4 rounded-lg inline-flex items-center justify-center gap-2 transition">
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-9.746 9.798c0 2.734.75 5.404 2.177 7.707l-2.313 6.179 6.434-2.783a9.857 9.857 0 004.882 1.235h.004c5.43 0 9.868-4.43 9.868-9.868 0-2.629-.568-5.124-1.588-7.509a9.874 9.874 0 00-8.109-5.859M12 0C5.373 0 0 5.373 0 12c0 2.149.547 4.179 1.506 5.946L.461 24l6.255-2.712C10.002 23.422 10.984 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0"/>
             </svg>
             Solicitar via WhatsApp
           </a>
-          <a href="mailto:contato@americaindustria.com.br" class="btn-premium border border-america-blue/50 hover:border-america-red text-white px-6 py-4 rounded-lg font-bold inline-flex items-center justify-center gap-2">
+          <a href="mailto:contato@americaindustria.com.br" class="bg-white text-america-blue hover:bg-slate-100 font-bold px-6 py-4 rounded-lg inline-flex items-center justify-center gap-2 transition">
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
               <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
               <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
             </svg>
-            contato@americaindustria.com.br
+            Enviar Email
           </a>
         </div>
 
-        <div class="text-center">
-          <a href="https://wa.me/556232598840?text=Olá%20América%20Indústria!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos." target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-america-red hover:text-red-400 font-bold transition">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-9.746 9.798c0 2.734.75 5.404 2.177 7.707l-2.313 6.179 6.434-2.783a9.857 9.857 0 004.882 1.235h.004c5.43 0 9.868-4.43 9.868-9.868 0-2.629-.568-5.124-1.588-7.509a9.874 9.874 0 00-8.109-5.859M12 0C5.373 0 0 5.373 0 12c0 2.149.547 4.179 1.506 5.946L.461 24l6.255-2.712C10.002 23.422 10.984 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0"/>
-            </svg>
-            Enviar mensagem via WhatsApp
-          </a>
-        </div>
-      </div>
-
-      <!-- Endereço -->
-      <div class="mt-12 text-center">
-        <p class="text-slate-400 mb-2">Visite-nos</p>
-        <p class="text-white font-medium">
+        <p class="text-blue-100">
           Rua C-145 Qd. 356 Lt. 18 - nº 1154<br />
           Jardim América • Goiânia - GO • CEP 74255-500
         </p>
@@ -619,56 +487,52 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="relative bg-america-dark border-t border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+  <footer class="bg-america-dark text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
       <div class="grid md:grid-cols-4 gap-8 mb-8">
         <div>
-          <h4 class="font-bold text-white mb-4 uppercase text-sm tracking-widest">América</h4>
+          <h4 class="font-bold mb-4 text-sm uppercase tracking-widest">América</h4>
           <p class="text-sm text-slate-400">Peças automotivas de precisão desde 1990. Qualidade, garantia e tradição em cada produto.</p>
         </div>
         <div>
-          <h4 class="font-bold text-white mb-4 uppercase text-sm tracking-widest">Produtos</h4>
+          <h4 class="font-bold mb-4 text-sm uppercase tracking-widest">Produtos</h4>
           <ul class="space-y-2 text-sm text-slate-400">
-            <li><a href="#produtos" class="hover:text-america-red transition">Induzidos</a></li>
-            <li><a href="#produtos" class="hover:text-america-red transition">Estatores</a></li>
-            <li><a href="#produtos" class="hover:text-america-red transition">Rotores</a></li>
-            <li><a href="#produtos" class="hover:text-america-red transition">Bobinas</a></li>
+            <li><a href="#produtos" class="hover:text-white transition">Induzidos</a></li>
+            <li><a href="#produtos" class="hover:text-white transition">Estatores</a></li>
+            <li><a href="#produtos" class="hover:text-white transition">Rotores</a></li>
+            <li><a href="#produtos" class="hover:text-white transition">Bobinas</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="font-bold text-white mb-4 uppercase text-sm tracking-widest">Empresa</h4>
+          <h4 class="font-bold mb-4 text-sm uppercase tracking-widest">Empresa</h4>
           <ul class="space-y-2 text-sm text-slate-400">
-            <li><a href="#sobre" class="hover:text-america-red transition">Sobre</a></li>
-            <li><a href="#diferencial" class="hover:text-america-red transition">Diferencial</a></li>
-            <li><a href="#contato" class="hover:text-america-red transition">Contato</a></li>
+            <li><a href="#sobre" class="hover:text-white transition">Sobre</a></li>
+            <li><a href="#diferencial" class="hover:text-white transition">Diferencial</a></li>
+            <li><a href="#contato" class="hover:text-white transition">Contato</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="font-bold text-white mb-4 uppercase text-sm tracking-widest">Contato</h4>
+          <h4 class="font-bold mb-4 text-sm uppercase tracking-widest">Contato</h4>
           <ul class="space-y-2 text-sm text-slate-400">
-            <li><a href="tel:+556232598840" class="hover:text-america-red transition">(62) 3259-8840</a></li>
-            <li><a href="mailto:contato@americaindustria.com.br" class="hover:text-america-red transition break-all">contato@americaindustria.com.br</a></li>
+            <li><a href="https://wa.me/5562991340408" target="_blank" rel="noopener noreferrer" class="hover:text-white transition">WhatsApp</a></li>
+            <li><a href="mailto:contato@americaindustria.com.br" class="hover:text-white transition break-all">contato@americaindustria.com.br</a></li>
           </ul>
         </div>
       </div>
-
       <div class="border-t border-slate-700 pt-8 text-center">
-        <p class="text-sm text-slate-500">
-          &copy; 2025 América Indústria LTDA. Todos os direitos reservados.
-        </p>
+        <p class="text-sm text-slate-500">&copy; 2025 América Indústria LTDA. Todos os direitos reservados.</p>
       </div>
     </div>
   </footer>
 
-  <!-- WhatsApp Flutuante -->
-  <a href="https://wa.me/556232598840?text=Olá%20América%20Indústria!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos." target="_blank" rel="noopener noreferrer" class="whatsapp-btn fixed bottom-6 right-6 w-14 h-14 bg-america-red hover:bg-red-600 rounded-full flex items-center justify-center text-white shadow-lg transition z-40">
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/5562991340408?text=Olá%20América%20Indústria!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos." target="_blank" rel="noopener noreferrer" class="whatsapp-float fixed bottom-6 right-6 w-14 h-14 bg-america-red hover:bg-red-600 rounded-full flex items-center justify-center text-white shadow-lg transition z-40">
     <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-9.746 9.798c0 2.734.75 5.404 2.177 7.707l-2.313 6.179 6.434-2.783a9.857 9.857 0 004.882 1.235h.004c5.43 0 9.868-4.43 9.868-9.868 0-2.629-.568-5.124-1.588-7.509a9.874 9.874 0 00-8.109-5.859M12 0C5.373 0 0 5.373 0 12c0 2.149.547 4.179 1.506 5.946L.461 24l6.255-2.712C10.002 23.422 10.984 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0"/>
     </svg>
   </a>
 
   <script>
-    // Menu Mobile
     const menuBtn = document.getElementById('menuBtn');
     const closeBtn = document.getElementById('closeBtn');
     const mobileMenu = document.getElementById('mobileMenu');
