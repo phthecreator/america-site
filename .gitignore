@@ -17,7 +17,7 @@ node_modules/
 node_modules
 
 # Build & Logs (AIOS)
-dist/
+# dist/  # Tracked for production deployment
 build/
 *.log
 logs/
