@@ -39,3 +39,7 @@ Thumbs.db
 live-squad-data.json
 *Catálogo América 2026 COMPLETO.pdf
 !src/assets/catalog.pdf
+
+# Squad-live (isolated in feature/squad-live branch)
+# Main branch contains ONLY home + catalog
+# See src/squad-live/README-SQUAD-LIVE.md for migration strategy

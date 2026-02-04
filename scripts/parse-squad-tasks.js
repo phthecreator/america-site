@@ -117,8 +117,29 @@ function main() {
   const tasksDir = path.join(__dirname, '../squads/america-catalog/tasks');
 
   if (!fs.existsSync(tasksDir)) {
-    console.error(`Tasks directory not found: ${tasksDir}`);
-    process.exit(1);
+    // Squad-live gamification isolated in feature/squad-live branch
+    // Main branch contains only home + catalog, no squad tracking
+    console.warn(`⚠️ Squad tasks not found (isolated in feature/squad-live)`);
+
+    // Create empty output for main branch
+    const publicDir = path.join(__dirname, '../public');
+    if (!fs.existsSync(publicDir)) {
+      fs.mkdirSync(publicDir, { recursive: true });
+    }
+
+    const output = {
+      timestamp: new Date().toISOString(),
+      totalTasks: 0,
+      completedTasks: 0,
+      sprintProgress: 0,
+      tasks: [],
+      note: 'Squad tracking isolated in feature/squad-live'
+    };
+
+    const outputPath = path.join(publicDir, 'squad-tasks.json');
+    fs.writeFileSync(outputPath, JSON.stringify(output, null, 2));
+    console.log(`✓ Generated empty ${outputPath}`);
+    return;
   }
 
   // Read all markdown files (exclude agent files)

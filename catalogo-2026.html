@@ -4,14 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Catálogo Digital 2026 | América Indústria</title>
-  <meta name="description" content="Catálogo completo com especificações técnicas de peças automotivas. PDF interativo com busca e navegação." />
-  <meta name="keywords" content="catálogo, peças automotivas, induzidos, estatores, rotores, bobinas" />
+  <title>Catálogo 2026 | América Recondicionadora</title>
+  <meta name="description" content="Catálogo completo de peças para motor. Induzidos, estatores, rotores, bobinas e automáticos." />
 
   <link rel="icon" type="image/png" href="logo-america.png" />
-  <link rel="canonical" href="https://www.americaindustria.com.br/catalogo-2026" />
 
-  <!-- PDF.js from CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <script>
     pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
@@ -21,38 +22,32 @@
 </head>
 <body>
 
-  <!-- HEADER PREMIUM -->
-  <header class="mechanical-pattern">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-3 md:gap-4">
-        <a href="/" class="flex items-center gap-3 md:gap-4">
-          <img src="logo-america.png" alt="América Indústria" class="h-10 md:h-12 w-auto object-contain filter brightness-110" />
-          <div class="hidden md:block leading-tight">
-            <p class="text-xs font-bold tracking-widest uppercase text-america-blue">
-              AMÉRICA
-            </p>
-            <p class="text-[10px] text-slate-400 font-light">
-              INDÚSTRIA DE PRECISÃO
-            </p>
-          </div>
-        </a>
-      </div>
+  <!-- HEADER -->
+  <header>
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <img src="logo-america.png" alt="América Recondicionadora" class="h-10 md:h-12 w-auto" />
+        <div class="hidden sm:block">
+          <p class="text-sm font-bold text-[#1c2f8f]">AMÉRICA</p>
+          <p class="text-xs text-slate-500">Recondicionadora</p>
+        </div>
+      </a>
 
       <nav class="hidden lg:flex items-center gap-8">
-        <a href="/#sobre" class="text-sm font-medium text-america-blue hover:text-america-red transition">Sobre</a>
-        <a href="/#produtos" class="text-sm font-medium text-america-blue hover:text-america-red transition">Produtos</a>
-        <a href="/#diferencial" class="text-sm font-medium text-america-blue hover:text-america-red transition">Diferencial</a>
-        <a href="/catalogo-2026" class="text-sm font-bold text-america-red">Catálogo 2026</a>
-        <a href="/#contato" class="text-sm font-medium text-america-blue hover:text-america-red transition">Contato</a>
+        <a href="/" class="text-sm font-medium text-slate-600 hover:text-[#1c2f8f] transition">Home</a>
+        <a href="/#sobre" class="text-sm font-medium text-slate-600 hover:text-[#1c2f8f] transition">Sobre</a>
+        <a href="/#produtos" class="text-sm font-medium text-slate-600 hover:text-[#1c2f8f] transition">Produtos</a>
+        <a href="/catalogo-2026" class="text-sm font-semibold text-[#e03a3e]">Catálogo 2026</a>
+        <a href="/#contato" class="text-sm font-medium text-slate-600 hover:text-[#1c2f8f] transition">Contato</a>
       </nav>
 
       <div class="flex items-center gap-3">
-        <a href="tel:+556232598840" class="hidden md:inline-flex items-center rounded-lg bg-america-red hover:bg-red-600 px-4 py-2 text-xs font-bold text-white transition">
+        <a href="tel:+556232598840" class="hidden md:flex btn-primary text-sm py-2 px-4">
           (62) 3259-8840
         </a>
         <button id="menuBtn" class="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition">
-          <svg class="w-6 h-6 text-america-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          <svg class="w-6 h-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
       </div>
@@ -60,261 +55,189 @@
   </header>
 
   <!-- MOBILE MENU -->
-  <div id="mobileMenu" class="fixed top-0 right-0 w-72 h-full bg-america-dark bg-opacity-95 shadow-2xl z-50 p-6 overflow-y-auto" style="transform: translateX(100%); transition: transform 0.3s ease;">
-    <button id="closeBtn" class="absolute top-4 right-4 p-2 rounded-lg hover:bg-white/10">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+  <div id="mobileMenu" class="fixed top-0 right-0 w-80 h-full shadow-xl z-50 p-6" style="transform: translateX(100%); transition: transform 0.3s ease;">
+    <button id="closeBtn" class="absolute top-4 right-4 p-2 rounded-lg hover:bg-slate-100">
+      <svg class="w-6 h-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
-    <nav class="flex flex-col gap-4 mt-8">
-      <a href="/" class="text-base font-medium hover:text-america-red transition py-2">Home</a>
-      <a href="/#sobre" class="text-base font-medium hover:text-america-red transition py-2">Sobre</a>
-      <a href="/#produtos" class="text-base font-medium hover:text-america-red transition py-2">Produtos</a>
-      <a href="/#diferencial" class="text-base font-medium hover:text-america-red transition py-2">Diferencial</a>
-      <a href="/catalogo-2026" class="text-base font-bold text-america-red transition py-2">Catálogo 2026</a>
-      <a href="/#contato" class="text-base font-medium hover:text-america-red transition py-2">Contato</a>
-      <a href="tel:+556232598840" class="flex items-center gap-2 mt-6 rounded-lg bg-america-red px-4 py-3 font-bold text-white">
-        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773c.26.559.934 1.42 2.853 3.339 1.92 1.92 2.78 2.592 3.339 2.853l.773-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2.5C6.767 18 3 14.233 3 9.5V5a1 1 0 011-1z"></path>
-        </svg>
-        (62) 3259-8840
-      </a>
-    </nav>
+    <div class="mt-12">
+      <nav class="flex flex-col gap-2">
+        <a href="/" class="py-3 px-4 rounded-lg hover:bg-slate-100 font-medium text-slate-700">Home</a>
+        <a href="/#sobre" class="py-3 px-4 rounded-lg hover:bg-slate-100 font-medium text-slate-700">Sobre</a>
+        <a href="/#produtos" class="py-3 px-4 rounded-lg hover:bg-slate-100 font-medium text-slate-700">Produtos</a>
+        <a href="/catalogo-2026" class="py-3 px-4 rounded-lg bg-[#e03a3e]/10 font-semibold text-[#e03a3e]">Catálogo 2026</a>
+        <a href="/#contato" class="py-3 px-4 rounded-lg hover:bg-slate-100 font-medium text-slate-700">Contato</a>
+      </nav>
+    </div>
   </div>
-  <div id="overlay" class="hidden fixed inset-0 bg-black/50 z-40 transition-opacity duration-300"></div>
+  <div id="overlay" class="hidden fixed inset-0 bg-black/30 z-40"></div>
 
-  <!-- HERO SECTION -->
-  <section class="futuristic-bg mechanical-pattern relative pt-16 md:pt-24 pb-12 md:pb-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center">
-        <h1 class="hero-title text-white font-black mb-4">
-          Catálogo Digital <span class="glow-text">2026</span>
-        </h1>
-        <p class="hero-subtitle text-slate-300 mb-8">
-          Explore nossa linha completa de peças com especificações técnicas detalhadas
-        </p>
-        <div class="flex flex-wrap justify-center gap-3">
-          <a href="https://wa.me/5562991340408?text=Olá%20América%20Indústria!%20Gostaria%20de%20mais%20informações%20sobre%20o%20catálogo%202026." target="_blank" rel="noopener noreferrer" class="btn-premium bg-america-red hover:bg-red-600 text-white px-6 py-2 rounded-lg inline-flex items-center gap-2 text-sm">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-9.746 9.798c0 2.734.75 5.404 2.177 7.707l-2.313 6.179 6.434-2.783a9.857 9.857 0 004.882 1.235h.004c5.43 0 9.868-4.43 9.868-9.868 0-2.629-.568-5.124-1.588-7.509a9.874 9.874 0 00-8.109-5.859M12 0C5.373 0 0 5.373 0 12c0 2.149.547 4.179 1.506 5.946L.461 24l6.255-2.712C10.002 23.422 10.984 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0"/>
-            </svg>
-            Mais Informações
-          </a>
-          <a href="/" class="btn-premium border border-america-blue/50 hover:border-america-red text-white px-6 py-2 rounded-lg inline-flex items-center gap-2 text-sm">
-            Voltar
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
-            </svg>
-          </a>
-        </div>
-      </div>
+  <!-- HERO -->
+  <section class="catalog-hero">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <span class="inline-block px-3 py-1 bg-white/10 rounded-full text-sm font-medium text-white/80 mb-4">
+        Edição 2026
+      </span>
+      <h1 class="mb-4">Catálogo de Produtos</h1>
+      <p class="text-white/70 max-w-xl mx-auto">
+        Confira nossa linha completa de peças para motor com especificações técnicas
+      </p>
     </div>
   </section>
 
-  <!-- PDF VIEWER SECTION -->
-  <section class="relative py-8 md:py-12 bg-slate-950">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- CATALOG VIEWER -->
+  <section class="py-8 md:py-12 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4">
 
       <!-- Toolbar -->
-      <div class="pdf-toolbar mb-6 bg-gradient-to-r from-america-blue to-america-blue/80 border-b-4 border-america-red rounded-t-lg p-4 flex flex-wrap items-center justify-between gap-4">
-
-        <!-- Navigation & Page Counter -->
-        <div class="flex items-center gap-2 order-1 sm:order-1">
-          <button id="prev-page" class="pdf-btn bg-white hover:bg-america-blue hover:text-white text-america-blue font-bold py-2 px-3 rounded transition flex items-center gap-1" title="Página anterior (← ou clique)">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-            </svg>
-            <span class="hidden sm:inline text-xs">Ant</span>
-          </button>
-          <span class="text-white text-sm font-bold whitespace-nowrap bg-america-blue/30 px-3 py-2 rounded">
-            <span id="page-num">--</span> / <span id="page-count">--</span>
-          </span>
-          <button id="next-page" class="pdf-btn bg-white hover:bg-america-blue hover:text-white text-america-blue font-bold py-2 px-3 rounded transition flex items-center gap-1" title="Próxima página (→ ou clique)">
-            <span class="hidden sm:inline text-xs">Próx</span>
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </button>
-        </div>
-
-        <!-- Search Bar -->
-        <div class="flex items-center gap-2 order-3 sm:order-2 w-full sm:w-auto sm:flex-1">
+      <div class="pdf-toolbar">
+        <!-- Search -->
+        <div class="flex items-center gap-2 flex-1 min-w-0">
           <input
             type="text"
             id="search-input"
             placeholder="Buscar no catálogo..."
-            class="flex-1 px-4 py-2 rounded text-sm text-slate-900 font-bold bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-america-red focus:ring-offset-1"
+            class="flex-1"
           />
-          <button id="search-btn" class="pdf-btn bg-america-red hover:bg-red-600 text-white font-bold py-2 px-4 rounded transition text-sm">
-            🔍
-          </button>
-          <button id="toggle-results" class="pdf-btn bg-america-blue hover:bg-blue-700 text-white font-bold py-2 px-3 rounded transition" title="Mostrar/ocultar resultados">
+          <button id="search-btn" class="pdf-btn pdf-btn-primary">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+            <span class="hidden sm:inline">Buscar</span>
+          </button>
+        </div>
+
+        <!-- Navigation -->
+        <div class="page-nav">
+          <button id="prev-page" class="pdf-btn" title="Página anterior">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+            </svg>
+          </button>
+          <span class="page-info">
+            <span id="page-num">1</span> / <span id="page-count">--</span>
+          </span>
+          <button id="next-page" class="pdf-btn" title="Próxima página">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
             </svg>
           </button>
         </div>
 
-        <!-- Zoom & Actions -->
-        <div class="flex items-center gap-2 order-2 sm:order-3 flex-wrap">
-          <button id="download-pdf" class="pdf-btn bg-gradient-to-r from-america-red to-red-600 hover:from-red-600 hover:to-red-700 text-white font-bold py-2 px-4 rounded transition text-sm flex items-center gap-2 shadow-lg" title="⬇️ Download PDF">
+        <!-- Zoom -->
+        <div class="zoom-controls">
+          <button id="zoom-out" class="pdf-btn" title="Diminuir">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"/>
+            </svg>
+          </button>
+          <span class="zoom-level" id="zoom-level">100%</span>
+          <button id="zoom-in" class="pdf-btn" title="Aumentar">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Actions -->
+        <div class="flex items-center gap-2">
+          <button id="download-pdf" class="pdf-btn pdf-btn-primary" title="Download">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
             </svg>
             <span class="hidden sm:inline">Download</span>
           </button>
-
-          <div class="flex items-center gap-2 bg-slate-700/50 px-2 py-1 rounded">
-            <button id="zoom-out" class="pdf-btn bg-white hover:bg-slate-100 text-america-blue font-bold py-1 px-2 rounded transition" title="Diminuir zoom">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
-              </svg>
-            </button>
-            <span class="text-white text-xs font-medium min-w-[45px] text-center" id="zoom-level">100%</span>
-            <button id="zoom-in" class="pdf-btn bg-white hover:bg-slate-100 text-america-blue font-bold py-1 px-2 rounded transition" title="Aumentar zoom">
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-              </svg>
-            </button>
-          </div>
-
-          <button id="print-pdf" class="pdf-btn bg-white hover:bg-slate-100 text-america-blue font-bold py-2 px-3 rounded transition text-sm" title="Imprimir">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4H9a2 2 0 00-2 2v2a2 2 0 002 2h6a2 2 0 002-2v-2a2 2 0 00-2-2zm-6-4h6V9a1 1 0 00-1-1H8a1 1 0 00-1 1v8z"></path>
+          <button id="toggle-results" class="pdf-btn hidden" title="Ver resultados">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
             </svg>
           </button>
         </div>
       </div>
 
-      <!-- Search Results Panel (Collapsible) -->
-      <div id="results-panel" class="hidden bg-slate-800/80 border-t-2 border-america-blue p-4 transition-all duration-300">
-        <div id="results-content" class="max-w-7xl mx-auto">
-          <!-- Results will be inserted here -->
-        </div>
+      <!-- Search Results -->
+      <div id="results-panel" class="hidden">
+        <div id="results-content"></div>
       </div>
 
-      <!-- PDF Canvas Container with Navigation Arrows -->
-      <div class="bg-gradient-to-b from-slate-900 to-slate-950 rounded-b-lg p-4 md:p-6 min-h-96 flex items-center justify-center gap-2 md:gap-4">
-        <!-- Left Arrow -->
-        <button id="nav-prev" class="flex flex-col items-center justify-center w-12 md:w-16 h-32 md:h-40 text-america-blue hover:text-america-red transition hover:scale-110 active:scale-95" title="Página anterior (← ou clique)">
-          <svg class="w-8 md:w-12 h-8 md:h-12 mb-1 md:mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path>
-          </svg>
-          <span class="text-xs font-bold hidden md:block">Anterior</span>
-        </button>
-
-        <!-- Canvas Wrapper -->
-        <div class="pdf-canvas-wrapper flex-1 bg-slate-900 rounded-lg p-4 overflow-auto flex items-center justify-center">
-          <canvas id="pdf-canvas" class="max-w-full mx-auto shadow-2xl"></canvas>
-          <div id="loading" class="hidden text-center text-slate-400">
-            <div class="inline-block p-6 bg-slate-800 rounded-lg">
-              <svg class="w-12 h-12 text-america-blue mx-auto mb-4 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-              </svg>
-              <p class="text-sm font-medium">Carregando catálogo...</p>
-            </div>
+      <!-- PDF Container -->
+      <div class="pdf-container">
+        <div class="pdf-canvas-wrapper" id="canvas-wrapper">
+          <canvas id="pdf-canvas"></canvas>
+          <div id="loading" class="text-center py-12">
+            <svg class="w-12 h-12 text-[#1c2f8f] mx-auto mb-4 animate-spin" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <p class="text-slate-500">Carregando catálogo...</p>
           </div>
         </div>
+      </div>
 
-        <!-- Right Arrow -->
-        <button id="nav-next" class="flex flex-col items-center justify-center w-12 md:w-16 h-32 md:h-40 text-america-blue hover:text-america-red transition hover:scale-110 active:scale-95" title="Próxima página (→ ou clique)">
-          <svg class="w-8 md:w-12 h-8 md:h-12 mb-1 md:mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+      <!-- Navigation arrows for mobile -->
+      <div class="flex justify-between mt-4 lg:hidden">
+        <button id="nav-prev" class="pdf-btn flex-1 mr-2 justify-center">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
           </svg>
-          <span class="text-xs font-bold hidden md:block">Próxima</span>
+          Anterior
+        </button>
+        <button id="nav-next" class="pdf-btn flex-1 ml-2 justify-center">
+          Próxima
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
         </button>
       </div>
 
-      <!-- Info Text -->
-      <div class="mt-6 p-4 bg-slate-800 rounded-lg border border-slate-700">
-        <p class="text-slate-300 text-sm">
-          <span class="font-semibold text-america-blue">Dicas:</span> Use os botões de navegação para folhear o catálogo, o campo de busca para encontrar produtos específicos, e ajuste o zoom para melhor visualização.
+      <!-- Tips -->
+      <div class="mt-6 p-4 bg-white border border-slate-200 rounded-lg">
+        <p class="text-sm text-slate-600">
+          <strong class="text-[#1c2f8f]">Dica:</strong> Use as setas do teclado para navegar entre as páginas.
+          Clique no número da página para ir direto a uma página específica.
         </p>
       </div>
 
+      <!-- CTA -->
+      <div class="mt-8 text-center">
+        <p class="text-slate-600 mb-4">Encontrou o que precisa? Solicite um orçamento!</p>
+        <a href="https://wa.me/5562991340408?text=Olá! Vi o catálogo e gostaria de solicitar um orçamento." target="_blank" class="btn-primary inline-flex">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          </svg>
+          Solicitar Orçamento via WhatsApp
+        </a>
+      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer class="relative bg-america-dark border-t border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-      <div class="grid md:grid-cols-4 gap-8 mb-8">
-        <div>
-          <h4 class="font-bold text-white mb-4 uppercase text-sm tracking-widest">América</h4>
-          <p class="text-sm text-slate-400">Peças automotivas de precisão desde 1990. Qualidade, garantia e tradição em cada produto.</p>
+  <footer class="py-8">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center gap-3">
+          <img src="logo-america.png" alt="América" class="h-8 brightness-0 invert" />
+          <span class="text-sm text-slate-400">América Recondicionadora</span>
         </div>
-        <div>
-          <h4 class="font-bold text-white mb-4 uppercase text-sm tracking-widest">Produtos</h4>
-          <ul class="space-y-2 text-sm text-slate-400">
-            <li><a href="/#produtos" class="hover:text-america-red transition">Induzidos</a></li>
-            <li><a href="/#produtos" class="hover:text-america-red transition">Estatores</a></li>
-            <li><a href="/#produtos" class="hover:text-america-red transition">Rotores</a></li>
-            <li><a href="/#produtos" class="hover:text-america-red transition">Bobinas</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-bold text-white mb-4 uppercase text-sm tracking-widest">Empresa</h4>
-          <ul class="space-y-2 text-sm text-slate-400">
-            <li><a href="/#sobre" class="hover:text-america-red transition">Sobre</a></li>
-            <li><a href="/#diferencial" class="hover:text-america-red transition">Diferencial</a></li>
-            <li><a href="/#contato" class="hover:text-america-red transition">Contato</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-bold text-white mb-4 uppercase text-sm tracking-widest">Contato</h4>
-          <ul class="space-y-2 text-sm text-slate-400">
-            <li><a href="tel:+556232598840" class="hover:text-america-red transition">(62) 3259-8840</a></li>
-            <li><a href="mailto:contato@americaindustria.com.br" class="hover:text-america-red transition break-all">contato@americaindustria.com.br</a></li>
-          </ul>
+        <div class="flex items-center gap-6 text-sm">
+          <a href="/" class="text-slate-400 hover:text-white transition">Home</a>
+          <a href="/#contato" class="text-slate-400 hover:text-white transition">Contato</a>
+          <a href="tel:+556232598840" class="text-slate-400 hover:text-white transition">(62) 3259-8840</a>
         </div>
       </div>
-
-      <div class="border-t border-slate-700 pt-8 text-center">
-        <p class="text-sm text-slate-500">
-          &copy; 2025 América Indústria LTDA. Todos os direitos reservados.
-        </p>
+      <div class="mt-6 pt-6 border-t border-slate-700 text-center">
+        <p class="text-xs text-slate-500">© 2025 América Recondicionadora. Todos os direitos reservados.</p>
       </div>
     </div>
   </footer>
 
-  <!-- WhatsApp Flutuante -->
-  <a href="https://wa.me/556232598840?text=Olá%20América%20Indústria!%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos." target="_blank" rel="noopener noreferrer" class="whatsapp-btn fixed bottom-6 right-6 w-14 h-14 bg-america-red hover:bg-red-600 rounded-full flex items-center justify-center text-white shadow-lg transition z-40">
-    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-9.746 9.798c0 2.734.75 5.404 2.177 7.707l-2.313 6.179 6.434-2.783a9.857 9.857 0 004.882 1.235h.004c5.43 0 9.868-4.43 9.868-9.868 0-2.629-.568-5.124-1.588-7.509a9.874 9.874 0 00-8.109-5.859M12 0C5.373 0 0 5.373 0 12c0 2.149.547 4.179 1.506 5.946L.461 24l6.255-2.712C10.002 23.422 10.984 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0"/>
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/5562991340408?text=Olá! Vi o catálogo e gostaria de mais informações." target="_blank" class="whatsapp-float">
+    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
   </a>
-
-  <script>
-    // Menu Mobile
-    const menuBtn = document.getElementById('menuBtn');
-    const closeBtn = document.getElementById('closeBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const overlay = document.getElementById('overlay');
-    const menuLinks = document.querySelectorAll('#mobileMenu a');
-
-    menuBtn?.addEventListener('click', () => {
-      mobileMenu?.classList.add('active');
-      overlay?.classList.remove('hidden');
-    });
-
-    closeBtn?.addEventListener('click', () => {
-      mobileMenu?.classList.remove('active');
-      overlay?.classList.add('hidden');
-    });
-
-    overlay?.addEventListener('click', () => {
-      mobileMenu?.classList.remove('active');
-      overlay?.classList.add('hidden');
-    });
-
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu?.classList.remove('active');
-        overlay?.classList.add('hidden');
-      });
-    });
-  </script>
 
 </body>
 </html>
