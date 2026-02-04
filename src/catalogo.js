@@ -1,3 +1,4 @@
+/* global pdfjsLib */
 import './styles/globals.css';
 
 // PDF Viewer State
