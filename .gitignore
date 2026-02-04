@@ -32,3 +32,10 @@ Thumbs.db
 .aios-core/local/
 .claude/settings.local.json
 .aios/install-log.txt
+
+# Project Specific
+.agent/
+.gemini/
+live-squad-data.json
+*Catálogo América 2026 COMPLETO.pdf
+!src/assets/catalog.pdf
