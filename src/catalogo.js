@@ -43,7 +43,7 @@ async function initPDF() {
   try {
     loadingDiv.classList.remove('hidden');
 
-    const pdf = await pdfjsLib.getDocument(PDF_URL).promise;
+    const pdf = await pdfjsLib.getDocument({ url: PDF_URL, isEvalSupported: false }).promise; // CVE-2024-4367
     pdfState.pdfDoc = pdf;
     pdfState.totalPages = pdf.numPages;
 

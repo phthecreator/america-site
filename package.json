@@ -5,8 +5,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run parse-tasks && vite",
-    "build": "npm run parse-tasks && vite build",
+    "dev": "vite",
+    "build": "vite build",
     "preview": "vite preview",
     "parse-tasks": "node scripts/parse-squad-tasks.js",
     "lint": "eslint src --ext .js",
