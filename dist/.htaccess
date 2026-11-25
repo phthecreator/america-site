@@ -1,0 +1,5 @@
+# América — URL limpa do catálogo: /catalogo-2026 abre catalogo-2026.html
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^catalogo-2026/?$ /catalogo-2026.html [L]
+</IfModule>
