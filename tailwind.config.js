@@ -2,6 +2,7 @@
 export default {
   content: [
     './index.html',
+    './catalogo-2026.html',
     './src/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {

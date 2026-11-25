@@ -34,15 +34,15 @@ const toggleResultsBtn = document.getElementById('toggle-results');
 const resultsPanel = document.getElementById('results-panel');
 const resultsContent = document.getElementById('results-content');
 
+/** Versão leve do catálogo (comprimida), servida a partir de /public */
+const PDF_URL = '/catalogo-america-2026.pdf';
+
 // Initialize PDF Viewer
 async function initPDF() {
   try {
     loadingDiv.classList.remove('hidden');
 
-    // Load PDF from public folder
-    const pdfPath = '/Catálogo América 2026 COMPLETO.pdf';
-
-    const pdf = await pdfjsLib.getDocument(pdfPath).promise;
+    const pdf = await pdfjsLib.getDocument(PDF_URL).promise;
     pdfState.pdfDoc = pdf;
     pdfState.totalPages = pdf.numPages;
 
@@ -431,21 +431,24 @@ function showNotification(message, type = 'info') {
 // Download PDF
 downloadBtn.addEventListener('click', () => {
   const link = document.createElement('a');
-  link.href = '/Catálogo América 2026 COMPLETO.pdf';
-  link.download = 'Catálogo América 2026 COMPLETO.pdf';
+  link.href = PDF_URL;
+  link.download = 'catalogo-america-2026.pdf';
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
   showNotification('Download iniciado!', 'success');
 });
 
-// Print PDF
-printBtn.addEventListener('click', () => {
-  const printWindow = window.open('/Catálogo América 2026 COMPLETO.pdf', '_blank');
-  if (printWindow) {
-    printWindow.print();
-  }
-});
+// Print PDF — o botão foi removido do HTML; sem esta checagem o script
+// quebrava aqui e o catálogo nunca carregava.
+if (printBtn) {
+  printBtn.addEventListener('click', () => {
+    const printWindow = window.open(PDF_URL, '_blank');
+    if (printWindow) {
+      printWindow.print();
+    }
+  });
+}
 
 // Handle page input (click on page number to jump)
 pageNumSpan.addEventListener('click', () => {
