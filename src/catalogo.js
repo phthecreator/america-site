@@ -1,5 +1,6 @@
 /* global pdfjsLib */
 import './styles/globals.css';
+import './theme.js';
 
 // PDF Viewer State
 const pdfState = {
@@ -79,21 +80,32 @@ async function renderPage(pageNum) {
     // Get page
     const page = await pdfState.pdfDoc.getPage(pageNum);
 
-    // Calculate viewport with scale
-    const baseScale = 1.5;
-    const viewport = page.getViewport({ scale: baseScale * pdfState.scale });
+    // Largura de exibição: ocupa a largura disponível (celular) até o tamanho
+    // antigo de desktop (escala 1.5); o zoom multiplica a partir daí.
+    const unscaled = page.getViewport({ scale: 1 });
+    const cssScale = fitScale(unscaled.width) * pdfState.scale;
+    const cssViewport = page.getViewport({ scale: cssScale });
 
-    // Set canvas dimensions
-    canvas.width = viewport.width;
-    canvas.height = viewport.height;
+    // Pixels reais = CSS × densidade da tela → nítido em telas retina/Android
+    const dpr = Math.min(window.devicePixelRatio || 1, 3);
+    const viewport = page.getViewport({ scale: cssScale * dpr });
 
-    // Render page to canvas
-    const renderContext = {
-      canvasContext: ctx,
-      viewport: viewport
-    };
+    canvas.width = Math.floor(viewport.width);
+    canvas.height = Math.floor(viewport.height);
+    canvas.style.width = `${Math.floor(cssViewport.width)}px`;
+    canvas.style.height = `${Math.floor(cssViewport.height)}px`;
 
-    await page.render(renderContext).promise;
+    // Cancela um desenho anterior ainda em andamento (toques rápidos em "próxima")
+    if (pdfState.renderTask) pdfState.renderTask.cancel();
+    pdfState.renderTask = page.render({ canvasContext: ctx, viewport });
+    try {
+      await pdfState.renderTask.promise;
+    } catch (err) {
+      if (err && err.name === 'RenderingCancelledException') return;
+      throw err;
+    } finally {
+      pdfState.renderTask = null;
+    }
 
     // Update button states
     updateNavigationButtons();
@@ -104,6 +116,31 @@ async function renderPage(pageNum) {
     console.error('Erro ao renderizar página:', error);
   }
 }
+
+/**
+ * Escala (CSS) para a página caber no contêiner, limitada ao tamanho de desktop (1.5).
+ * @param {number} pageWidth largura da página em pontos (escala 1)
+ * @returns {number}
+ */
+function fitScale(pageWidth) {
+  const container = canvasWrapper.parentElement;
+  const styles = getComputedStyle(container);
+  const available = container.clientWidth - parseFloat(styles.paddingLeft) - parseFloat(styles.paddingRight);
+  return Math.min(1.5, Math.max(0.3, available / pageWidth));
+}
+
+// Re-desenha ao girar o celular / redimensionar a janela.
+// Só quando a LARGURA muda: no iOS a barra de endereço dispara resize ao rolar.
+let resizeTimer;
+let lastWidth = window.innerWidth;
+window.addEventListener('resize', () => {
+  if (window.innerWidth === lastWidth) return;
+  lastWidth = window.innerWidth;
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    if (pdfState.pdfDoc) renderPage(pdfState.currentPage);
+  }, 200);
+});
 
 // Update navigation button states
 function updateNavigationButtons() {

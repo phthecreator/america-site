@@ -2,7 +2,9 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#fcfcfa" />
+  <meta name="color-scheme" content="light dark" />
 
   <title>Catálogo 2026 | América Recondicionadora</title>
   <meta name="description" content="Catálogo completo de peças para motor. Induzidos, estatores, rotores, bobinas e automáticos." />
@@ -10,9 +12,14 @@
   <link rel="icon" type="image/png" href="logo-america.png" />
   <link rel="canonical" href="https://americaindustria.com.br/catalogo-2026.html" />
 
+  <!-- Tema salvo pelo visitante, aplicado antes de pintar (evita piscar) -->
+  <script>try { var t = localStorage.getItem('am-theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}</script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;1,8..60,600&display=swap"
+    rel="stylesheet">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <script>
@@ -25,29 +32,35 @@
 
   <!-- HEADER -->
   <header>
-    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-3">
-        <img src="logo-america.png" alt="América Recondicionadora" class="h-10 md:h-12 w-auto" />
-        <div class="hidden sm:block">
-          <p class="text-sm font-bold text-[#1c2f8f]">AMÉRICA</p>
-          <p class="text-xs text-slate-500">Recondicionadora</p>
-        </div>
+    <div class="max-w-6xl mx-auto px-4 h-16 md:h-[72px] flex items-center justify-between gap-4">
+      <a href="/" class="flex items-center gap-3 shrink-0" aria-label="América Recondicionadora — início">
+        <span class="logo-plate"><img src="logo-america.png" alt="" class="h-9 md:h-11 w-auto" width="62" height="40" /></span>
+        <span class="hidden sm:block leading-tight">
+          <span class="block text-sm font-bold text-am-accent-text tracking-wide">AMÉRICA</span>
+          <span class="block text-xs text-am-muted">Recondicionadora</span>
+        </span>
       </a>
 
-      <nav class="hidden lg:flex items-center gap-8">
-        <a href="/" class="text-sm font-medium text-slate-600 hover:text-[#1c2f8f] transition">Home</a>
-        <a href="/#sobre" class="text-sm font-medium text-slate-600 hover:text-[#1c2f8f] transition">Sobre</a>
-        <a href="/#produtos" class="text-sm font-medium text-slate-600 hover:text-[#1c2f8f] transition">Produtos</a>
-        <a href="/catalogo-2026.html" class="text-sm font-semibold text-[#e03a3e]">Catálogo 2026</a>
-        <a href="/#contato" class="text-sm font-medium text-slate-600 hover:text-[#1c2f8f] transition">Contato</a>
+      <nav class="hidden lg:flex items-center gap-8" aria-label="Principal">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/#sobre" class="nav-link">Sobre</a>
+        <a href="/#produtos" class="nav-link">Produtos</a>
+        <a href="/catalogo-2026.html" class="nav-link" aria-current="page">Catálogo 2026</a>
+        <a href="/#contato" class="nav-link">Contato</a>
       </nav>
 
-      <div class="flex items-center gap-3">
-        <a href="tel:+556232598840" class="hidden md:flex btn-primary text-sm py-2 px-4">
-          (62) 3259-8840
-        </a>
-        <button id="menuBtn" class="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition">
-          <svg class="w-6 h-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="flex items-center gap-2">
+        <a href="tel:+556232598840" class="hidden md:inline-flex btn-secondary btn-sm">(62) 3259-8840</a>
+        <button type="button" class="icon-btn" data-theme-toggle aria-label="Usar modo escuro">
+          <svg class="theme-icon-moon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+          <svg class="theme-icon-sun" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+        </button>
+        <button id="menuBtn" type="button" class="icon-btn lg:hidden" aria-label="Abrir menu" aria-controls="mobileMenu">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
@@ -56,193 +69,203 @@
   </header>
 
   <!-- MOBILE MENU -->
-  <div id="mobileMenu" class="fixed top-0 right-0 w-80 h-full shadow-xl z-50 p-6" style="transform: translateX(100%); transition: transform 0.3s ease;">
-    <button id="closeBtn" class="absolute top-4 right-4 p-2 rounded-lg hover:bg-slate-100">
-      <svg class="w-6 h-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <div id="mobileMenu" class="fixed top-0 right-0 shadow-xl z-50 p-6" style="transform: translateX(100%); transition: transform 0.3s ease;" aria-label="Menu">
+    <button id="closeBtn" type="button" class="icon-btn absolute top-4 right-4" aria-label="Fechar menu">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
-    <div class="mt-12">
-      <nav class="flex flex-col gap-2">
-        <a href="/" class="py-3 px-4 rounded-lg hover:bg-slate-100 font-medium text-slate-700">Home</a>
-        <a href="/#sobre" class="py-3 px-4 rounded-lg hover:bg-slate-100 font-medium text-slate-700">Sobre</a>
-        <a href="/#produtos" class="py-3 px-4 rounded-lg hover:bg-slate-100 font-medium text-slate-700">Produtos</a>
-        <a href="/catalogo-2026.html" class="py-3 px-4 rounded-lg bg-[#e03a3e]/10 font-semibold text-[#e03a3e]">Catálogo 2026</a>
-        <a href="/#contato" class="py-3 px-4 rounded-lg hover:bg-slate-100 font-medium text-slate-700">Contato</a>
+    <div class="mt-14">
+      <nav class="flex flex-col gap-1" aria-label="Menu">
+        <a href="/" class="menu-link">Home</a>
+        <a href="/#sobre" class="menu-link">Sobre</a>
+        <a href="/#produtos" class="menu-link">Produtos</a>
+        <a href="/catalogo-2026.html" class="menu-link menu-link-cta" aria-current="page">Catálogo 2026</a>
+        <a href="/#contato" class="menu-link">Contato</a>
       </nav>
+      <div class="mt-8 pt-6 border-t border-am-line">
+        <a href="tel:+556232598840" class="btn-secondary w-full">(62) 3259-8840</a>
+      </div>
     </div>
   </div>
-  <div id="overlay" class="hidden fixed inset-0 bg-black/30 z-40"></div>
+  <div id="overlay" class="hidden fixed inset-0 bg-black/40 z-40"></div>
 
-  <!-- HERO -->
-  <section class="catalog-hero">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <span class="inline-block px-3 py-1 bg-white/10 rounded-full text-sm font-medium text-white/80 mb-4">
-        Edição 2026
-      </span>
-      <h1 class="mb-4">Catálogo de Produtos</h1>
-      <p class="text-white/70 max-w-xl mx-auto">
-        Confira nossa linha completa de peças para motor com especificações técnicas
-      </p>
-      <a href="/catalogo-america-2026.pdf" download="catalogo-america-2026.pdf" data-download-pdf
-        class="mt-6 inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-4 rounded-xl bg-[#e03a3e] hover:bg-[#c82333] text-white text-base font-bold shadow-lg transition">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-        </svg>
-        Baixar catálogo (PDF · 9,7 MB)
-      </a>
-    </div>
-  </section>
-
-  <!-- CATALOG VIEWER -->
-  <section class="py-8 md:py-12 bg-slate-50">
-    <div class="max-w-6xl mx-auto px-4">
-
-      <!-- Toolbar -->
-      <div class="pdf-toolbar">
-        <!-- Search -->
-        <div class="flex items-center gap-2 flex-1 min-w-0">
-          <input
-            type="text"
-            id="search-input"
-            placeholder="Buscar no catálogo..."
-            class="flex-1"
-          />
-          <button id="search-btn" class="pdf-btn pdf-btn-primary">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+  <main>
+    <!-- HERO -->
+    <section class="catalog-hero">
+      <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-12 gap-8 items-end">
+        <div class="md:col-span-8">
+          <span class="eyebrow">Edição 2026 · 74 páginas</span>
+          <h1 class="mt-5 mb-4">Catálogo de Produtos</h1>
+          <p class="band-muted text-lg max-w-xl">
+            Confira nossa linha completa de peças para motor com especificações técnicas
+          </p>
+        </div>
+        <div class="md:col-span-4 md:text-right">
+          <a href="/catalogo-america-2026.pdf" download="catalogo-america-2026.pdf" data-download-pdf
+            class="btn-primary w-full md:w-auto">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
             </svg>
-            <span class="hidden sm:inline">Buscar</span>
-          </button>
+            Baixar catálogo (PDF · 9,7 MB)
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATALOG VIEWER -->
+    <section class="py-6 md:py-10 bg-am-surface">
+      <div class="max-w-6xl mx-auto px-3 sm:px-4">
+
+        <!-- Toolbar -->
+        <div class="pdf-toolbar">
+          <!-- Search -->
+          <div class="toolbar-search flex items-center gap-2 flex-1 min-w-0">
+            <label for="search-input" class="sr-only">Buscar no catálogo</label>
+            <input
+              type="search"
+              id="search-input"
+              placeholder="Buscar código, peça ou marca…"
+              enterkeyhint="search"
+              autocomplete="off"
+            />
+            <button id="search-btn" type="button" class="pdf-btn pdf-btn-primary" aria-label="Buscar">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+              </svg>
+              <span class="hidden sm:inline">Buscar</span>
+            </button>
+          </div>
+
+          <!-- Navigation -->
+          <div class="page-nav">
+            <button id="prev-page" type="button" title="Página anterior" aria-label="Página anterior">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+              </svg>
+            </button>
+            <span class="page-info">
+              <span id="page-num">1</span> / <span id="page-count">--</span>
+            </span>
+            <button id="next-page" type="button" title="Próxima página" aria-label="Próxima página">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Zoom -->
+          <div class="zoom-controls">
+            <button id="zoom-out" type="button" title="Diminuir" aria-label="Diminuir zoom">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"/>
+              </svg>
+            </button>
+            <span class="zoom-level" id="zoom-level">100%</span>
+            <button id="zoom-in" type="button" title="Aumentar" aria-label="Aumentar zoom">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Actions -->
+          <div class="flex items-center gap-2">
+            <button id="download-pdf" type="button" class="pdf-btn pdf-btn-primary" title="Baixar PDF" aria-label="Baixar PDF">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+              </svg>
+              <span class="hidden sm:inline">Download</span>
+            </button>
+            <button id="toggle-results" type="button" class="pdf-btn hidden" title="Ver resultados" aria-label="Ver resultados">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+              </svg>
+            </button>
+          </div>
         </div>
 
-        <!-- Navigation -->
-        <div class="page-nav">
-          <button id="prev-page" class="pdf-btn" title="Página anterior">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <!-- Search Results -->
+        <div id="results-panel" class="hidden" aria-live="polite">
+          <div id="results-content"></div>
+        </div>
+
+        <!-- PDF Container -->
+        <div class="pdf-container">
+          <div class="pdf-canvas-wrapper" id="canvas-wrapper">
+            <canvas id="pdf-canvas" aria-label="Página do catálogo"></canvas>
+            <div id="loading" class="text-center py-12 px-8">
+              <svg class="w-12 h-12 text-am-accent mx-auto mb-4 animate-spin" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              <p class="text-am-muted">Carregando catálogo...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navigation arrows for mobile -->
+        <div class="flex justify-between gap-3 mt-4 lg:hidden">
+          <button id="nav-prev" type="button" class="pdf-btn flex-1">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
             </svg>
+            Anterior
           </button>
-          <span class="page-info">
-            <span id="page-num">1</span> / <span id="page-count">--</span>
-          </span>
-          <button id="next-page" class="pdf-btn" title="Próxima página">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <button id="nav-next" type="button" class="pdf-btn flex-1">
+            Próxima
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
             </svg>
           </button>
         </div>
 
-        <!-- Zoom -->
-        <div class="zoom-controls">
-          <button id="zoom-out" class="pdf-btn" title="Diminuir">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"/>
-            </svg>
-          </button>
-          <span class="zoom-level" id="zoom-level">100%</span>
-          <button id="zoom-in" class="pdf-btn" title="Aumentar">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
-            </svg>
-          </button>
+        <!-- Tips -->
+        <div class="catalog-tip mt-6 p-4 hidden lg:block">
+          <p class="text-sm text-am-muted">
+            <strong class="text-am-accent-text">Dica:</strong> Use as setas do teclado para navegar entre as páginas.
+            Clique no número da página para ir direto a uma página específica.
+          </p>
         </div>
 
-        <!-- Actions -->
-        <div class="flex items-center gap-2">
-          <button id="download-pdf" class="pdf-btn pdf-btn-primary" title="Download">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+        <!-- CTA -->
+        <div class="mt-10 pt-10 border-t border-am-line text-center">
+          <h2 class="text-2xl md:text-3xl font-semibold mb-3">Encontrou o que precisa?</h2>
+          <p class="text-am-muted mb-6">Solicite um orçamento pelo WhatsApp com o código da peça.</p>
+          <a href="https://wa.me/5562991340408?text=Olá! Vi o catálogo e gostaria de solicitar um orçamento." target="_blank" rel="noopener" class="btn-primary w-full sm:w-auto">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
             </svg>
-            <span class="hidden sm:inline">Download</span>
-          </button>
-          <button id="toggle-results" class="pdf-btn hidden" title="Ver resultados">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
-            </svg>
-          </button>
+            Solicitar Orçamento via WhatsApp
+          </a>
         </div>
       </div>
-
-      <!-- Search Results -->
-      <div id="results-panel" class="hidden">
-        <div id="results-content"></div>
-      </div>
-
-      <!-- PDF Container -->
-      <div class="pdf-container">
-        <div class="pdf-canvas-wrapper" id="canvas-wrapper">
-          <canvas id="pdf-canvas"></canvas>
-          <div id="loading" class="text-center py-12">
-            <svg class="w-12 h-12 text-[#1c2f8f] mx-auto mb-4 animate-spin" fill="none" viewBox="0 0 24 24">
-              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-            </svg>
-            <p class="text-slate-500">Carregando catálogo...</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Navigation arrows for mobile -->
-      <div class="flex justify-between mt-4 lg:hidden">
-        <button id="nav-prev" class="pdf-btn flex-1 mr-2 justify-center">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-          </svg>
-          Anterior
-        </button>
-        <button id="nav-next" class="pdf-btn flex-1 ml-2 justify-center">
-          Próxima
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Tips -->
-      <div class="mt-6 p-4 bg-white border border-slate-200 rounded-lg">
-        <p class="text-sm text-slate-600">
-          <strong class="text-[#1c2f8f]">Dica:</strong> Use as setas do teclado para navegar entre as páginas.
-          Clique no número da página para ir direto a uma página específica.
-        </p>
-      </div>
-
-      <!-- CTA -->
-      <div class="mt-8 text-center">
-        <p class="text-slate-600 mb-4">Encontrou o que precisa? Solicite um orçamento!</p>
-        <a href="https://wa.me/5562991340408?text=Olá! Vi o catálogo e gostaria de solicitar um orçamento." target="_blank" class="btn-primary inline-flex">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-          </svg>
-          Solicitar Orçamento via WhatsApp
-        </a>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <!-- FOOTER -->
-  <footer class="py-8">
+  <footer class="pt-10 pb-24 md:pb-10">
     <div class="max-w-6xl mx-auto px-4">
-      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
         <div class="flex items-center gap-3">
-          <img src="logo-america.png" alt="América" class="h-8 brightness-0 invert" />
-          <span class="text-sm text-slate-400">América Recondicionadora</span>
+          <span class="footer-logo"><img src="logo-america.png" alt="América" class="h-7 w-auto" width="44" height="28" loading="lazy" /></span>
+          <span class="text-sm">América Recondicionadora</span>
         </div>
-        <div class="flex items-center gap-6 text-sm">
-          <a href="/" class="text-slate-400 hover:text-white transition">Home</a>
-          <a href="/#contato" class="text-slate-400 hover:text-white transition">Contato</a>
-          <a href="tel:+556232598840" class="text-slate-400 hover:text-white transition">(62) 3259-8840</a>
+        <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm">
+          <a href="/" class="inline-block py-2">Home</a>
+          <a href="/#contato" class="inline-block py-2">Contato</a>
+          <a href="tel:+556232598840" class="inline-block py-2">(62) 3259-8840</a>
         </div>
       </div>
-      <div class="mt-6 pt-6 border-t border-slate-700 text-center">
-        <p class="text-xs text-slate-500">© 2025 América Recondicionadora. Todos os direitos reservados.</p>
+      <div class="mt-6 pt-6 border-t border-white/10 text-center">
+        <p class="text-xs">© 2025 América Recondicionadora. Todos os direitos reservados.</p>
       </div>
     </div>
   </footer>
 
   <!-- WHATSAPP FLOAT -->
-  <a href="https://wa.me/5562991340408?text=Olá! Vi o catálogo e gostaria de mais informações." target="_blank" class="whatsapp-float">
-    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+  <a href="https://wa.me/5562991340408?text=Olá! Vi o catálogo e gostaria de mais informações." target="_blank" rel="noopener" class="whatsapp-float" aria-label="Conversar no WhatsApp">
+    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>
   </a>

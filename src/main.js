@@ -1,4 +1,5 @@
 import './styles/globals.css';
+import './theme.js';
 
 // Mobile menu toggle
 const menuBtn = document.getElementById('menuBtn');

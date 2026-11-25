@@ -1,0 +1,130 @@
+/*
+ * Design system América — baseado no "Institucional" (Masterpiece Web Studio),
+ * adaptado à marca: azul #1c2f8f, vermelho #e03a3e, logo original.
+ * Usado só na página do catálogo (importado em src/catalogo.js); a home não carrega este arquivo.
+ *
+ * Modo: <html data-theme="light|dark">. Sem atributo, segue o sistema (prefers-color-scheme).
+ * Cada cor tem a versão "-rgb" para uso com transparência no Tailwind: rgb(var(--am-x-rgb) / .5)
+ */
+
+:root,
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  /* Marca (fixas nos dois modos) */
+  --am-brand-blue: #1c2f8f;
+  --am-brand-red: #e03a3e;
+
+  /* Superfícies */
+  --am-bg: #fcfcfa;              --am-bg-rgb: 252 252 250;
+  --am-surface: #f3f5fa;         --am-surface-rgb: 243 245 250;
+  --am-surface-2: #e6eaf5;       --am-surface-2-rgb: 230 234 245;
+  --am-band: #1c2f8f;            --am-band-rgb: 28 47 143;      /* faixa/hero */
+  --am-on-band: #ffffff;         --am-on-band-rgb: 255 255 255;
+
+  /* Texto */
+  --am-text: #111827;            --am-text-rgb: 17 24 39;        /* 17,3:1 no fundo */
+  --am-text-muted: #4a5568;      --am-text-muted-rgb: 74 85 104; /* 7,3:1 */
+
+  /* Linhas */
+  --am-line: #dde2ef;            --am-line-rgb: 221 226 239;
+  --am-line-strong: #6b7690;     --am-line-strong-rgb: 107 118 144; /* 4,4:1 — bordas de campo */
+
+  /* Ação */
+  --am-accent: #1c2f8f;          --am-accent-rgb: 28 47 143;     /* botões/links: 11:1 */
+  --am-accent-hover: #16257a;
+  --am-on-accent: #ffffff;
+  --am-accent-text: #1c2f8f;
+  --am-cta: #e03a3e;             --am-cta-rgb: 224 58 62;        /* vermelho da marca */
+  --am-cta-hover: #c8262b;
+  --am-on-cta: #ffffff;          /* 4,3:1 → usar só com texto ≥ 19px negrito (AA texto grande) */
+  --am-cta-text: #c42126;        /* vermelho para TEXTO sobre o fundo: 5,7:1 */
+  --am-focus: #1c2f8f;
+
+  /* Logo: plaqueta (o PNG tem fundo branco) */
+  --am-logo-plate: transparent;
+
+  --am-shadow-raised: 0 1px 2px rgb(17 24 39 / .08), 0 12px 32px -12px rgb(28 47 143 / .22);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --am-bg: #0b1233;              --am-bg-rgb: 11 18 51;
+  --am-surface: #121b47;         --am-surface-rgb: 18 27 71;
+  --am-surface-2: #1a2558;       --am-surface-2-rgb: 26 37 88;
+  --am-band: #101a4a;            --am-band-rgb: 16 26 74;
+  --am-on-band: #f3f5fb;         --am-on-band-rgb: 243 245 251;
+
+  --am-text: #f3f5fb;            --am-text-rgb: 243 245 251;     /* 16,8:1 */
+  --am-text-muted: #b4bedd;      --am-text-muted-rgb: 180 190 221; /* 9,9:1 */
+
+  --am-line: #24306a;            --am-line-rgb: 36 48 106;
+  --am-line-strong: #6f7db0;     --am-line-strong-rgb: 111 125 176;
+
+  --am-accent: #a9b8f0;          --am-accent-rgb: 169 184 240;   /* azul da marca clareado p/ fundo escuro: 9,4:1 */
+  --am-accent-hover: #c0cbf4;
+  --am-on-accent: #0b1233;
+  --am-accent-text: #a9b8f0;
+  --am-cta: #e03a3e;             --am-cta-rgb: 224 58 62;
+  --am-cta-hover: #c8262b;
+  --am-on-cta: #ffffff;
+  --am-cta-text: #ff8a8d;        /* 8,1:1 */
+  --am-focus: #e9c46a;
+
+  --am-logo-plate: #ffffff;
+
+  --am-shadow-raised: 0 1px 2px rgb(0 0 0 / .3), 0 12px 32px -12px rgb(0 0 0 / .5);
+}
+
+/* Sem escolha explícita: segue o sistema */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --am-bg: #0b1233;              --am-bg-rgb: 11 18 51;
+    --am-surface: #121b47;         --am-surface-rgb: 18 27 71;
+    --am-surface-2: #1a2558;       --am-surface-2-rgb: 26 37 88;
+    --am-band: #101a4a;            --am-band-rgb: 16 26 74;
+    --am-on-band: #f3f5fb;         --am-on-band-rgb: 243 245 251;
+    --am-text: #f3f5fb;            --am-text-rgb: 243 245 251;
+    --am-text-muted: #b4bedd;      --am-text-muted-rgb: 180 190 221;
+    --am-line: #24306a;            --am-line-rgb: 36 48 106;
+    --am-line-strong: #6f7db0;     --am-line-strong-rgb: 111 125 176;
+    --am-accent: #a9b8f0;          --am-accent-rgb: 169 184 240;
+    --am-accent-hover: #c0cbf4;
+    --am-on-accent: #0b1233;
+    --am-accent-text: #a9b8f0;
+    --am-cta-text: #ff8a8d;
+    --am-focus: #e9c46a;
+    --am-logo-plate: #ffffff;
+    --am-shadow-raised: 0 1px 2px rgb(0 0 0 / .3), 0 12px 32px -12px rgb(0 0 0 / .5);
+  }
+}
+
+/* Tipografia, forma e espaço (iguais nos dois modos) */
+:root {
+  --am-font-display: "Source Serif 4", Georgia, "Times New Roman", serif;   /* títulos (Institucional) */
+  --am-font-body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif; /* texto */
+
+  --am-display-size: clamp(2.25rem, 1.5rem + 3.2vw, 3.75rem);
+  --am-display-leading: 1.05;
+  --am-headline-size: clamp(1.6rem, 1.2rem + 1.6vw, 2.4rem);
+  --am-title-size: clamp(1.15rem, 1.05rem + .4vw, 1.375rem);
+  --am-body-size: 1.0625rem;     /* 17px: legível no celular sem zoom */
+  --am-body-sm-size: .9375rem;
+  --am-label-size: .75rem;
+  --am-label-tracking: .12em;
+  --am-cta-size: 1.1875rem;      /* 19px negrito = "texto grande" WCAG → branco no vermelho passa */
+
+  --am-radius-sm: 4px;
+  --am-radius-md: 8px;
+  --am-radius-lg: 12px;
+  --am-radius-pill: 999px;
+
+  --am-space-section: 72px;
+  --am-space-gutter: clamp(16px, 4vw, 48px);
+  --am-size-target: 44px;        /* área mínima de toque */
+
+  --am-ease-out: cubic-bezier(.16, 1, .3, 1);
+  --am-dur-hover: 200ms;
+}
