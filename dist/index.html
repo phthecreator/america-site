@@ -3,7 +3,9 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#fcfcfa" />
+  <meta name="color-scheme" content="light dark" />
 
   <title>América Recondicionadora | Peças para Motor desde 1994</title>
   <meta name="description"
@@ -14,47 +16,53 @@
   <link rel="icon" type="image/png" href="/assets/logo-america-CmqEAFFT.png" />
   <link rel="canonical" href="https://americaindustria.com.br/" />
 
+  <!-- Tema salvo pelo visitante, aplicado antes de pintar (evita piscar) -->
+  <script>try { var t = localStorage.getItem('am-theme'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}</script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,600;1,8..60,600&display=swap"
+    rel="stylesheet">
 
-  <script type="module" crossorigin src="/assets/main-BnAwtkxY.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/globals-DmNdxXTX.js">
-  <link rel="stylesheet" crossorigin href="/assets/globals-CN96YBht.css">
+  <script type="module" crossorigin src="/assets/main-D2rfaWpc.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/theme-BBS9TDoT.js">
+  <link rel="stylesheet" crossorigin href="/assets/theme-CVtjtHdV.css">
 </head>
 
 <body>
 
   <!-- HEADER -->
   <header>
-    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-      <!-- Logo -->
-      <a href="/" class="flex items-center gap-3">
-        <img src="/assets/logo-america-CmqEAFFT.png" alt="América Recondicionadora" class="h-10 md:h-12 w-auto" />
-        <div class="hidden sm:block">
-          <p class="text-sm font-bold text-[#1c2f8f]">AMÉRICA</p>
-          <p class="text-xs text-slate-500">Recondicionadora</p>
-        </div>
+    <div class="max-w-6xl mx-auto px-4 h-16 md:h-[72px] flex items-center justify-between gap-4">
+      <a href="/" class="flex items-center gap-3 shrink-0" aria-label="América Recondicionadora — início">
+        <span class="logo-plate"><img src="/assets/logo-america-CmqEAFFT.png" alt="" class="h-9 md:h-11 w-auto" width="62" height="40" /></span>
+        <span class="hidden sm:block leading-tight">
+          <span class="block text-sm font-bold text-am-accent-text tracking-wide">AMÉRICA</span>
+          <span class="block text-xs text-am-muted">Recondicionadora</span>
+        </span>
       </a>
 
-      <!-- Nav Desktop -->
-      <nav class="hidden lg:flex items-center gap-8">
-        <a href="#sobre" class="text-sm font-medium text-slate-600 hover:text-[#1c2f8f] transition">Sobre</a>
-        <a href="#produtos" class="text-sm font-medium text-slate-600 hover:text-[#1c2f8f] transition">Produtos</a>
-        <a href="#diferenciais"
-          class="text-sm font-medium text-slate-600 hover:text-[#1c2f8f] transition">Diferenciais</a>
-        <a href="/catalogo-2026.html" class="text-sm font-semibold text-[#e03a3e] hover:text-[#c82333] transition">Catálogo
-          2026</a>
-        <a href="#contato" class="text-sm font-medium text-slate-600 hover:text-[#1c2f8f] transition">Contato</a>
+      <nav class="hidden lg:flex items-center gap-8" aria-label="Principal">
+        <a href="#sobre" class="nav-link">Sobre</a>
+        <a href="#produtos" class="nav-link">Produtos</a>
+        <a href="#diferenciais" class="nav-link">Diferenciais</a>
+        <a href="/catalogo-2026.html" class="nav-link nav-link-cta">Catálogo 2026</a>
+        <a href="#contato" class="nav-link">Contato</a>
       </nav>
 
-      <!-- CTA + Mobile Menu -->
-      <div class="flex items-center gap-3">
-        <a href="tel:+556232598840" class="hidden md:flex btn-primary text-sm py-2 px-4">
-          (62) 3259-8840
-        </a>
-        <button id="menuBtn" class="lg:hidden p-2 rounded-lg hover:bg-slate-100 transition">
-          <svg class="w-6 h-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="flex items-center gap-2">
+        <a href="tel:+556232598840" class="hidden md:inline-flex btn-secondary btn-sm">(62) 3259-8840</a>
+        <button type="button" class="icon-btn" data-theme-toggle aria-label="Usar modo escuro">
+          <svg class="theme-icon-moon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+          <svg class="theme-icon-sun" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+        </button>
+        <button id="menuBtn" type="button" class="icon-btn lg:hidden" aria-label="Abrir menu" aria-controls="mobileMenu">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
@@ -63,434 +71,359 @@
   </header>
 
   <!-- MOBILE MENU -->
-  <div id="mobileMenu" class="fixed top-0 right-0 w-80 h-full shadow-xl z-50 p-6"
-    style="transform: translateX(100%); transition: transform 0.3s ease;">
-    <button id="closeBtn" class="absolute top-4 right-4 p-2 rounded-lg hover:bg-slate-100">
-      <svg class="w-6 h-6 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <div id="mobileMenu" class="fixed top-0 right-0 shadow-xl z-50 p-6"
+    style="transform: translateX(100%); transition: transform 0.3s ease;" aria-label="Menu">
+    <button id="closeBtn" type="button" class="icon-btn absolute top-4 right-4" aria-label="Fechar menu">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
-    <div class="mt-12">
-      <nav class="flex flex-col gap-2">
-        <a href="#sobre" class="py-3 px-4 rounded-lg hover:bg-slate-100 font-medium text-slate-700">Sobre</a>
-        <a href="#produtos" class="py-3 px-4 rounded-lg hover:bg-slate-100 font-medium text-slate-700">Produtos</a>
-        <a href="#diferenciais"
-          class="py-3 px-4 rounded-lg hover:bg-slate-100 font-medium text-slate-700">Diferenciais</a>
-        <a href="/catalogo-2026.html" class="py-3 px-4 rounded-lg bg-[#e03a3e]/10 font-semibold text-[#e03a3e]">Catálogo
-          2026</a>
-        <a href="#contato" class="py-3 px-4 rounded-lg hover:bg-slate-100 font-medium text-slate-700">Contato</a>
+    <div class="mt-14">
+      <nav class="flex flex-col gap-1" aria-label="Menu">
+        <a href="#sobre" class="menu-link">Sobre</a>
+        <a href="#produtos" class="menu-link">Produtos</a>
+        <a href="#diferenciais" class="menu-link">Diferenciais</a>
+        <a href="/catalogo-2026.html" class="menu-link menu-link-cta">Catálogo 2026</a>
+        <a href="#contato" class="menu-link">Contato</a>
       </nav>
-      <div class="mt-8 pt-6 border-t border-slate-200">
-        <a href="tel:+556232598840" class="btn-primary w-full justify-center text-sm">
-          (62) 3259-8840
-        </a>
+      <div class="mt-8 pt-6 border-t border-am-line">
+        <a href="tel:+556232598840" class="btn-secondary w-full">(62) 3259-8840</a>
       </div>
     </div>
   </div>
-  <div id="overlay" class="hidden fixed inset-0 bg-black/30 z-40"></div>
+  <div id="overlay" class="hidden fixed inset-0 bg-black/40 z-40"></div>
 
-  <!-- HERO -->
-  <section class="hero-section py-16 md:py-24">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="max-w-3xl">
-        <span class="badge mb-6">Desde 1994 • Goiânia, GO</span>
+  <main>
+    <!-- HERO -->
+    <section class="pt-12 pb-14 md:pt-20 md:pb-20">
+      <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-12 gap-12 lg:gap-10 items-end">
+        <div class="lg:col-span-7">
+          <span class="eyebrow mb-6">Desde 1994 · Goiânia, GO</span>
 
-        <h1 class="hero-title mb-6">
-          Peças para motor com <span class="text-highlight">qualidade</span> e <span
-            class="text-highlight-red">garantia</span>
-        </h1>
+          <h1 class="hero-title mt-5 mb-6">
+            Peças para motor com <span class="text-highlight">qualidade</span> e
+            <span class="text-highlight-red">garantia</span>
+          </h1>
 
-        <p class="hero-subtitle mb-8">
-          Fabricamos e recondicionamos induzidos, estatores, rotores, bobinas e automáticos.
-          Mais de 30 anos fornecendo peças para oficinas e distribuidoras em todo Brasil.
-        </p>
+          <p class="hero-subtitle mb-9">
+            Fabricamos e recondicionamos induzidos, estatores, rotores, bobinas e automáticos.
+            Mais de 30 anos fornecendo peças para oficinas e distribuidoras em todo Brasil.
+          </p>
 
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="https://wa.me/5562991340408?text=Olá! Gostaria de solicitar um orçamento." target="_blank"
-            class="btn-primary">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
-            </svg>
-            Solicitar Orçamento
-          </a>
-          <a href="/catalogo-2026.html" class="btn-outline">
-            Ver Catálogo 2026
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="https://wa.me/5562991340408?text=Olá! Gostaria de solicitar um orçamento." target="_blank"
+              rel="noopener" class="btn-primary">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+              </svg>
+              Solicitar Orçamento
+            </a>
+            <a href="/catalogo-2026.html" class="btn-outline">
+              Ver Catálogo 2026
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
         </div>
+
+        <!-- Números (estilo relatório anual) -->
+        <dl class="lg:col-span-5 grid grid-cols-2 border-t border-am-line">
+          <div class="py-6 pr-4 border-b border-r border-am-line">
+            <dt class="sr-only">Anos de mercado</dt>
+            <dd class="stat-number">30+</dd>
+            <dd class="stat-label">Anos de mercado</dd>
+          </div>
+          <div class="py-6 pl-5 border-b border-am-line">
+            <dt class="sr-only">Produtos recondicionados</dt>
+            <dd class="stat-number stat-number-red" id="product-counter">15.000+</dd>
+            <dd class="stat-label">Produtos Recondicionados</dd>
+          </div>
+          <div class="py-6 pr-4 border-b border-r border-am-line">
+            <dt class="sr-only">Garantia</dt>
+            <dd class="stat-number">100%</dd>
+            <dd class="stat-label">Garantia de fábrica</dd>
+          </div>
+          <div class="py-6 pl-5 border-b border-am-line">
+            <dt class="sr-only">Entrega</dt>
+            <dd class="stat-number stat-number-red">Brasil</dd>
+            <dd class="stat-label">Entrega nacional</dd>
+          </div>
+        </dl>
       </div>
+    </section>
 
-      <!-- Stats -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-16 border-t border-slate-200">
-        <div>
-          <p class="stat-number">30+</p>
-          <p class="stat-label">Anos de mercado</p>
+    <!-- PARCEIROS -->
+    <section class="py-8 border-y border-am-line overflow-hidden" aria-label="Parceiros e fornecedores">
+      <div class="max-w-6xl mx-auto px-4">
+        <p class="text-center eyebrow w-full justify-center mb-6 !text-am-muted">Parceiros &amp; Fornecedores de Confiança</p>
+        <div class="relative flex overflow-hidden" aria-hidden="true">
+          <div class="marquee whitespace-nowrap flex items-center gap-12 md:gap-20">
+            <span class="partner-name">BOSCH</span>
+            <span class="partner-name">VALEO</span>
+            <span class="partner-name">MARELLI</span>
+            <span class="partner-name">DENSO</span>
+            <span class="partner-name">DELCO</span>
+            <span class="partner-name">MITSUBISHI</span>
+            <span class="partner-name">BOSCH</span>
+            <span class="partner-name">VALEO</span>
+            <span class="partner-name">MARELLI</span>
+            <span class="partner-name">DENSO</span>
+            <span class="partner-name">DELCO</span>
+            <span class="partner-name">MITSUBISHI</span>
+          </div>
         </div>
-        <div>
-          <p class="stat-number text-[#e03a3e]" id="product-counter">0</p>
-          <p class="stat-label">Produtos Recondicionados</p>
-        </div>
-        <div>
-          <p class="stat-number">100%</p>
-          <p class="stat-label">Garantia de fábrica</p>
-        </div>
-        <div>
-          <p class="stat-number text-[#e03a3e]">Brasil</p>
-          <p class="stat-label">Entrega nacional</p>
-        </div>
+        <p class="sr-only">Bosch, Valeo, Marelli, Denso, Delco e Mitsubishi.</p>
       </div>
+    </section>
 
-      <script>
-        // Simple counter animation
-        function animateCounter(id, target) {
-          let count = 0;
-          const el = document.getElementById(id);
-          const interval = setInterval(() => {
-            count += Math.ceil(target / 50);
-            if (count >= target) {
-              el.innerText = target.toLocaleString() + '+';
-              clearInterval(interval);
-            } else {
-              el.innerText = count.toLocaleString();
-            }
-          }, 40);
-        }
-        window.addEventListener('scroll', () => {
-          const el = document.getElementById('product-counter');
-          if (el.getBoundingClientRect().top < window.innerHeight && el.innerText === '0') {
-            animateCounter('product-counter', 15000);
-          }
-        }, { once: true });
-      </script>
-    </div>
-  </section>
-
-  <!-- PARTNERS CAROUSEL -->
-  <section class="bg-white py-8 border-b border-slate-100 overflow-hidden">
-    <div class="max-w-6xl mx-auto px-4">
-      <p class="text-center text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Parceiros & Fornecedores de
-        Confiança</p>
-      <div class="relative flex overflow-x-hidden">
-        <div
-          class="animate-marquee whitespace-nowrap flex items-center gap-12 md:gap-24 opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-700">
-          <span class="text-2xl font-black text-slate-300">BOSCH</span>
-          <span class="text-2xl font-black text-slate-300">VALEO</span>
-          <span class="text-2xl font-black text-slate-300">MARELLI</span>
-          <span class="text-2xl font-black text-slate-300">DENSO</span>
-          <span class="text-2xl font-black text-slate-300">DELCO</span>
-          <span class="text-2xl font-black text-slate-300">MITSUBISHI</span>
-          <!-- Duplicate for seamless loop -->
-          <span class="text-2xl font-black text-slate-300">BOSCH</span>
-          <span class="text-2xl font-black text-slate-300">VALEO</span>
-          <span class="text-2xl font-black text-slate-300">MARELLI</span>
-          <span class="text-2xl font-black text-slate-300">DENSO</span>
-          <span class="text-2xl font-black text-slate-300">DELCO</span>
-          <span class="text-2xl font-black text-slate-300">MITSUBISHI</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <style>
-    @keyframes marquee {
-      0% {
-        transform: translateX(0);
-      }
-
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    .animate-marquee {
-      animation: marquee 30s linear infinite;
-    }
-  </style>
-
-  <!-- SOBRE -->
-  <section id="sobre" class="section">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
+    <!-- SOBRE -->
+    <section id="sobre" class="section">
+      <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
         <div>
-          <span class="badge-red badge mb-4">Quem Somos</span>
-          <h2 class="section-title">Tradição e qualidade em cada peça</h2>
-          <p class="text-slate-600 mb-6 leading-relaxed">
-            A <strong>América Recondicionadora</strong> nasceu em 1994 com o compromisso de fabricar
+          <span class="eyebrow mb-5">Quem Somos</span>
+          <h2 class="section-title mt-4">Tradição e qualidade em cada peça</h2>
+          <p class="text-am-muted mb-5">
+            A <strong class="text-am-text">América Recondicionadora</strong> nasceu em 1994 com o compromisso de fabricar
             peças para motor com excelência. Começamos pequenos e crescemos junto com nossos clientes.
           </p>
-          <p class="text-slate-600 mb-8 leading-relaxed">
+          <p class="text-am-muted mb-8">
             Hoje atendemos oficinas, auto elétricas e distribuidoras em todo o Brasil,
             sempre mantendo o padrão de qualidade que nos tornou referência no setor.
           </p>
-          <ul class="space-y-3">
-            <li class="flex items-center gap-3 text-slate-700">
-              <svg class="w-5 h-5 text-[#1c2f8f]" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd" />
+          <ul class="border-t border-am-line">
+            <li class="flex items-center gap-3 py-4 border-b border-am-line font-semibold">
+              <svg class="w-5 h-5 shrink-0 text-am-cta-text" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
               </svg>
               Fabricação própria em Goiânia
             </li>
-            <li class="flex items-center gap-3 text-slate-700">
-              <svg class="w-5 h-5 text-[#1c2f8f]" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd" />
+            <li class="flex items-center gap-3 py-4 border-b border-am-line font-semibold">
+              <svg class="w-5 h-5 shrink-0 text-am-cta-text" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
               </svg>
               Controle de qualidade rigoroso
             </li>
-            <li class="flex items-center gap-3 text-slate-700">
-              <svg class="w-5 h-5 text-[#1c2f8f]" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd"
-                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                  clip-rule="evenodd" />
+            <li class="flex items-center gap-3 py-4 border-b border-am-line font-semibold">
+              <svg class="w-5 h-5 shrink-0 text-am-cta-text" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
               </svg>
               Garantia em todos os produtos
             </li>
           </ul>
         </div>
-        <div class="card-featured p-8">
-          <div class="text-center">
-            <img src="/assets/logo-america-CmqEAFFT.png" alt="América Recondicionadora" class="h-24 mx-auto mb-6" />
-            <p class="text-4xl font-bold text-[#1c2f8f] mb-2">1994</p>
-            <p class="text-slate-600">Ano de fundação</p>
-            <div class="mt-6 pt-6 border-t border-slate-200">
-              <p class="text-sm text-slate-500">Goiânia, Goiás - Brasil</p>
-            </div>
-          </div>
+
+        <div class="band rounded-xl p-8 md:p-12">
+          <span class="inline-block bg-white rounded-md px-4 py-3 mb-10">
+            <img src="/assets/logo-america-CmqEAFFT.png" alt="América Recondicionadora" class="h-16 w-auto" width="100" height="64" loading="lazy" />
+          </span>
+          <p class="font-am-display text-7xl md:text-8xl font-semibold leading-none mb-3">1994</p>
+          <p class="text-lg band-muted">Ano de fundação</p>
+          <hr class="my-8 border-0 border-t border-white/20" />
+          <p class="text-sm band-muted uppercase tracking-[.12em] font-bold">Goiânia, Goiás · Brasil</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- PRODUTOS -->
-  <section id="produtos" class="section section-alt">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <span class="badge mb-4">Nossa Linha</span>
-        <h2 class="section-title">Produtos</h2>
-        <p class="section-subtitle mx-auto">
-          Fabricamos e recondicionamos peças para motores de partida e alternadores
-        </p>
-      </div>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Induzidos -->
-        <div class="product-card">
-          <div class="product-icon">
-            <svg class="w-10 h-10 text-[#1c2f8f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10" stroke-width="2" />
-              <circle cx="12" cy="12" r="4" stroke-width="2" />
-            </svg>
-          </div>
-          <h3 class="text-lg font-semibold text-slate-800 mb-2">Induzidos</h3>
-          <p class="text-sm text-slate-500">Motor de partida com precisão micrométrica e alta durabilidade</p>
-        </div>
-
-        <!-- Estatores -->
-        <div class="product-card">
-          <div class="product-icon">
-            <svg class="w-10 h-10 text-[#e03a3e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5" stroke-width="2" />
-            </svg>
-          </div>
-          <h3 class="text-lg font-semibold text-slate-800 mb-2">Estatores</h3>
-          <p class="text-sm text-slate-500">Estabilidade e desempenho para aplicações leves e pesadas</p>
-        </div>
-
-        <!-- Rotores -->
-        <div class="product-card">
-          <div class="product-icon">
-            <svg class="w-10 h-10 text-[#1c2f8f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="9" stroke-width="2" />
-              <line x1="12" y1="3" x2="12" y2="21" stroke-width="2" />
-              <line x1="3" y1="12" x2="21" y2="12" stroke-width="2" />
-            </svg>
-          </div>
-          <h3 class="text-lg font-semibold text-slate-800 mb-2">Rotores</h3>
-          <p class="text-sm text-slate-500">Precisão no acionamento para veículos nacionais e importados</p>
-        </div>
-
-        <!-- Bobinas -->
-        <div class="product-card">
-          <div class="product-icon">
-            <svg class="w-10 h-10 text-[#e03a3e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <rect x="4" y="4" width="16" height="16" rx="2" stroke-width="2" />
-              <circle cx="12" cy="12" r="3" stroke-width="2" />
-            </svg>
-          </div>
-          <h3 class="text-lg font-semibold text-slate-800 mb-2">Bobinas de Campo</h3>
-          <p class="text-sm text-slate-500">Produzidas em alto padrão com garantia de fábrica</p>
-        </div>
-
-        <!-- Automáticos -->
-        <div class="product-card">
-          <div class="product-icon">
-            <svg class="w-10 h-10 text-[#1c2f8f]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-          </div>
-          <h3 class="text-lg font-semibold text-slate-800 mb-2">Automáticos</h3>
-          <p class="text-sm text-slate-500">Componentes elétricos com qualidade comprovada</p>
-        </div>
-
-        <!-- CTA Card -->
-        <div class="product-card bg-[#1c2f8f] border-[#1c2f8f]">
-          <div class="product-icon bg-white/10">
-            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-            </svg>
-          </div>
-          <h3 class="text-lg font-semibold text-white mb-2">Ver Catálogo</h3>
-          <p class="text-sm text-white/70 mb-4">Confira todas as nossas peças e especificações</p>
-          <a href="/catalogo-2026.html"
-            class="inline-flex items-center gap-2 text-sm font-semibold text-white hover:underline">
-            Acessar Catálogo 2026
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DIFERENCIAIS -->
-  <section id="diferenciais" class="section">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="text-center mb-12">
-        <span class="badge-red badge mb-4">Por Que Escolher</span>
-        <h2 class="section-title">Nossos Diferenciais</h2>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg fill="currentColor" viewBox="0 0 20 20">
-              <path
-                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-            </svg>
-          </div>
-          <h3 class="text-lg font-semibold text-slate-800 mb-2">Qualidade Garantida</h3>
-          <p class="text-sm text-slate-500">30 anos de experiência com controle de qualidade em 100% da produção</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon feature-icon-red">
-            <svg fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                clip-rule="evenodd" />
-            </svg>
-          </div>
-          <h3 class="text-lg font-semibold text-slate-800 mb-2">Garantia de Fábrica</h3>
-          <p class="text-sm text-slate-500">Todos os produtos com garantia. Suporte técnico para dúvidas</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg fill="currentColor" viewBox="0 0 20 20">
-              <path
-                d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z" />
-              <path fill-rule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z"
-                clip-rule="evenodd" />
-            </svg>
-          </div>
-          <h3 class="text-lg font-semibold text-slate-800 mb-2">Preço Justo</h3>
-          <p class="text-sm text-slate-500">Melhor custo-benefício do mercado sem perder qualidade</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTATO -->
-  <section id="contato" class="section section-alt">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="card p-8 md:p-12 text-center">
-        <h2 class="section-title mb-4">Fale Conosco</h2>
-        <p class="text-slate-600 mb-8">
-          Solicite um orçamento ou tire suas dúvidas. Estamos prontos para atender.
-        </p>
-
-        <div class="grid sm:grid-cols-2 gap-4 mb-8">
-          <a href="https://wa.me/5562991340408?text=Olá! Gostaria de solicitar um orçamento." target="_blank"
-            class="btn-primary justify-center">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
-            </svg>
-            WhatsApp
-          </a>
-          <a href="tel:+556232598840" class="btn-secondary justify-center">
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path
-                d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-            </svg>
-            (62) 3259-8840
-          </a>
-        </div>
-
-        <div class="pt-6 border-t border-slate-200">
-          <p class="text-sm text-slate-500 mb-2">Endereço</p>
-          <p class="text-slate-700">
-            Rua C-145 Qd. 356 Lt. 18 - nº 1154<br />
-            Jardim América • Goiânia - GO • CEP 74255-500
+    <!-- PRODUTOS -->
+    <section id="produtos" class="section section-alt">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="max-w-2xl mb-12">
+          <span class="eyebrow mb-4">Nossa Linha</span>
+          <h2 class="section-title mt-4">Produtos</h2>
+          <p class="section-subtitle">
+            Fabricamos e recondicionamos peças para motores de partida e alternadores
           </p>
         </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+          <article class="product-card">
+            <div class="flex items-start justify-between">
+              <div class="product-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke-width="2" /><circle cx="12" cy="12" r="4" stroke-width="2" /></svg>
+              </div>
+              <span class="card-index">01</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Induzidos</h3>
+            <p class="text-am-muted">Motor de partida com precisão micrométrica e alta durabilidade</p>
+          </article>
+
+          <article class="product-card">
+            <div class="flex items-start justify-between">
+              <div class="product-icon feature-icon-red">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5" stroke-width="2" /></svg>
+              </div>
+              <span class="card-index">02</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Estatores</h3>
+            <p class="text-am-muted">Estabilidade e desempenho para aplicações leves e pesadas</p>
+          </article>
+
+          <article class="product-card">
+            <div class="flex items-start justify-between">
+              <div class="product-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke-width="2" /><line x1="12" y1="3" x2="12" y2="21" stroke-width="2" /><line x1="3" y1="12" x2="21" y2="12" stroke-width="2" /></svg>
+              </div>
+              <span class="card-index">03</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Rotores</h3>
+            <p class="text-am-muted">Precisão no acionamento para veículos nacionais e importados</p>
+          </article>
+
+          <article class="product-card">
+            <div class="flex items-start justify-between">
+              <div class="product-icon feature-icon-red">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2" stroke-width="2" /><circle cx="12" cy="12" r="3" stroke-width="2" /></svg>
+              </div>
+              <span class="card-index">04</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Bobinas de Campo</h3>
+            <p class="text-am-muted">Produzidas em alto padrão com garantia de fábrica</p>
+          </article>
+
+          <article class="product-card">
+            <div class="flex items-start justify-between">
+              <div class="product-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+              </div>
+              <span class="card-index">05</span>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Automáticos</h3>
+            <p class="text-am-muted">Componentes elétricos com qualidade comprovada</p>
+          </article>
+
+          <a href="/catalogo-2026.html" class="product-card card-band group block">
+            <div class="product-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Ver Catálogo</h3>
+            <p class="band-muted mb-5">Confira todas as nossas peças e especificações</p>
+            <span class="inline-flex items-center gap-2 font-bold">
+              Acessar Catálogo 2026
+              <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+            </span>
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section id="diferenciais" class="section">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="max-w-2xl mb-12">
+          <span class="eyebrow mb-4">Por Que Escolher</span>
+          <h2 class="section-title mt-4">Nossos Diferenciais</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 border-t-2 border-am-text">
+          <div class="py-8 md:pr-8 border-b md:border-b-0 md:border-r border-am-line">
+            <div class="feature-icon">
+              <svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+            </div>
+            <h3 class="text-2xl font-semibold mb-3">Qualidade Garantida</h3>
+            <p class="text-am-muted">30 anos de experiência com controle de qualidade em 100% da produção</p>
+          </div>
+
+          <div class="py-8 md:px-8 border-b md:border-b-0 md:border-r border-am-line">
+            <div class="feature-icon feature-icon-red">
+              <svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+            </div>
+            <h3 class="text-2xl font-semibold mb-3">Garantia de Fábrica</h3>
+            <p class="text-am-muted">Todos os produtos com garantia. Suporte técnico para dúvidas</p>
+          </div>
+
+          <div class="py-8 md:pl-8">
+            <div class="feature-icon">
+              <svg fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z" /><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clip-rule="evenodd" /></svg>
+            </div>
+            <h3 class="text-2xl font-semibold mb-3">Preço Justo</h3>
+            <p class="text-am-muted">Melhor custo-benefício do mercado sem perder qualidade</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="section band">
+      <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+        <div>
+          <span class="eyebrow mb-4">Contato</span>
+          <h2 class="section-title mt-4">Fale Conosco</h2>
+          <p class="band-muted text-lg max-w-md">
+            Solicite um orçamento ou tire suas dúvidas. Estamos prontos para atender.
+          </p>
+        </div>
+
+        <div>
+          <div class="grid sm:grid-cols-2 gap-3 mb-8">
+            <a href="https://wa.me/5562991340408?text=Olá! Gostaria de solicitar um orçamento." target="_blank"
+              rel="noopener" class="btn-primary">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+              </svg>
+              WhatsApp
+            </a>
+            <a href="tel:+556232598840" class="btn-outline">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+              </svg>
+              (62) 3259-8840
+            </a>
+          </div>
+
+          <div class="pt-6 border-t border-white/20">
+            <p class="eyebrow mb-3">Endereço</p>
+            <address class="not-italic text-lg">
+              Rua C-145 Qd. 356 Lt. 18 - nº 1154<br />
+              Jardim América • Goiânia - GO • CEP 74255-500
+            </address>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- FOOTER -->
-  <footer class="py-12">
+  <footer class="pt-14 pb-24 md:pb-12">
     <div class="max-w-6xl mx-auto px-4">
-      <div class="grid md:grid-cols-4 gap-8 mb-8">
-        <div>
-          <img src="/assets/logo-america-CmqEAFFT.png" alt="América" class="h-10 mb-4 brightness-0 invert" />
-          <p class="text-sm text-slate-400">
-            Fabricação e recondicionamento de peças para motor desde 1994.
-          </p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+        <div class="col-span-2 md:col-span-1">
+          <span class="footer-logo mb-4"><img src="/assets/logo-america-CmqEAFFT.png" alt="América" class="h-9 w-auto" width="56" height="36" loading="lazy" /></span>
+          <p class="text-sm">Fabricação e recondicionamento de peças para motor desde 1994.</p>
         </div>
         <div>
-          <h4 class="font-semibold text-white mb-4">Produtos</h4>
-          <ul class="space-y-2 text-sm">
-            <li><a href="#produtos" class="text-slate-400 hover:text-white transition">Induzidos</a></li>
-            <li><a href="#produtos" class="text-slate-400 hover:text-white transition">Estatores</a></li>
-            <li><a href="#produtos" class="text-slate-400 hover:text-white transition">Rotores</a></li>
-            <li><a href="#produtos" class="text-slate-400 hover:text-white transition">Bobinas</a></li>
+          <h4 class="mb-4">Produtos</h4>
+          <ul class="space-y-1 text-sm">
+            <li><a href="#produtos" class="inline-block py-1.5">Induzidos</a></li>
+            <li><a href="#produtos" class="inline-block py-1.5">Estatores</a></li>
+            <li><a href="#produtos" class="inline-block py-1.5">Rotores</a></li>
+            <li><a href="#produtos" class="inline-block py-1.5">Bobinas</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="font-semibold text-white mb-4">Empresa</h4>
-          <ul class="space-y-2 text-sm">
-            <li><a href="#sobre" class="text-slate-400 hover:text-white transition">Sobre</a></li>
-            <li><a href="/catalogo-2026.html" class="text-slate-400 hover:text-white transition">Catálogo</a></li>
-            <li><a href="#contato" class="text-slate-400 hover:text-white transition">Contato</a></li>
+          <h4 class="mb-4">Empresa</h4>
+          <ul class="space-y-1 text-sm">
+            <li><a href="#sobre" class="inline-block py-1.5">Sobre</a></li>
+            <li><a href="/catalogo-2026.html" class="inline-block py-1.5">Catálogo</a></li>
+            <li><a href="#contato" class="inline-block py-1.5">Contato</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="font-semibold text-white mb-4">Contato</h4>
-          <ul class="space-y-2 text-sm">
-            <li><a href="tel:+556232598840" class="text-slate-400 hover:text-white transition">(62) 3259-8840</a></li>
-            <li><a href="https://wa.me/5562991340408" class="text-slate-400 hover:text-white transition">WhatsApp</a>
-            </li>
+          <h4 class="mb-4">Contato</h4>
+          <ul class="space-y-1 text-sm">
+            <li><a href="tel:+556232598840" class="inline-block py-1.5">(62) 3259-8840</a></li>
+            <li><a href="https://wa.me/5562991340408" class="inline-block py-1.5">WhatsApp</a></li>
           </ul>
         </div>
       </div>
-      <div class="pt-8 border-t border-slate-700 text-center">
-        <p class="text-sm text-slate-500">
-          © 2025 América Recondicionadora. Todos os direitos reservados.
-        </p>
+      <div class="pt-8 border-t border-white/10 text-center">
+        <p class="text-sm">© 2025 América Recondicionadora. Todos os direitos reservados.</p>
       </div>
     </div>
   </footer>
 
-  <!-- SQUAD LIVE FLOAT -->
+  <!-- SQUAD LIVE FLOAT (interno — aguardando decisão de remoção) -->
   <a href="/squad-live" id="squadLiveBtn" class="squad-live-float" title="Squad Live Monitor">
     <div class="pulse-ring"></div>
     <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -501,8 +434,8 @@
 
   <!-- WHATSAPP FLOAT -->
   <a href="https://wa.me/5562991340408?text=Olá! Vim pelo site e gostaria de mais informações." target="_blank"
-    class="whatsapp-float">
-    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+    rel="noopener" class="whatsapp-float" aria-label="Conversar no WhatsApp">
+    <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
       <path
         d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
     </svg>
