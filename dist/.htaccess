@@ -2,4 +2,7 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteRule ^catalogo-2026/?$ /catalogo-2026.html [L]
+
+# PDF antigo (48 MB, nome com acento/espaço) → versão leve nova
+RewriteRule ^Cat[^/]*COMPLETO\.pdf$ /catalogo-america-2026.pdf [R=301,L]
 </IfModule>
