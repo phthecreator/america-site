@@ -43,3 +43,6 @@ live-squad-data.json
 # Squad-live (isolated in feature/squad-live branch)
 # Main branch contains ONLY home + catalog
 # See src/squad-live/README-SQUAD-LIVE.md for migration strategy
+
+# iCloud (Desktop sincronizado): placeholders de arquivos "baixados para a nuvem"
+*.icloud
