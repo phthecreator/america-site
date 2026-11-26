@@ -28,4 +28,4 @@ Rollback: `tar xzf ~/backup-site-<data>.tar.gz -C <public_html>`.
 - [ ] Teste em iPhone e Android reais (até agora só emulação).
 - [ ] Decidir se apaga o PDF antigo de 48 MB (hoje redireciona).
 - [ ] Epics 1 e 3 (catálogo em HTML) cancelados por ora — orçar à parte com o cliente.
-- `squad-live-game/` está solto na raiz, fora do git; não é do site. Decidir se move, ignora ou apaga.
+- `squad-live-game/` (cópia antiga) movido para fora: `PRIMEIROS PROJETOS/squad-live-game-copia-antiga-america-site/`. A versão principal (com .git) é `PRIMEIROS PROJETOS/squad-live-game/`.
